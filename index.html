@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Nithyusha 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fff1f7, #f3edff);
+      overflow: hidden;
+      color: #333;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      padding: 45px 28px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(120, 80, 120, 0.15);
+      animation: appear 1s ease;
+    }
+
+    .emoji {
+      font-size: 70px;
+      animation: bounce 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #8c4b76;
+    }
+
+    h2 {
+      font-size: 26px;
+      color: #8c4b76;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    button {
+      margin-top: 28px;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #8c4b76;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(140,75,118,0.25);
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .balloon {
+      position: fixed;
+      bottom: -120px;
+      font-size: 45px;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+    }
+
+    .b1 { left: 8%; animation-duration: 8s; }
+    .b2 { left: 25%; animation-duration: 10s; animation-delay: 2s; }
+    .b3 { left: 70%; animation-duration: 9s; animation-delay: 1s; }
+    .b4 { left: 88%; animation-duration: 11s; animation-delay: 3s; }
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      font-size: 22px;
+      animation: confettiFall 4s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(-8deg);
+      }
+      to {
+        transform: translateY(-120vh) rotate(12deg);
+      }
+    }
+
+    @keyframes confettiFall {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating balloons -->
+  <div class="balloon b1">🎈</div>
+  <div class="balloon b2">🎈</div>
+  <div class="balloon b3">🎈</div>
+  <div class="balloon b4">🎈</div>
+
+  <!-- First screen -->
+  <div class="page" id="screen1">
+    <div class="card">
+      <div class="emoji">🎁</div>
+
+      <h1>Hey Nithyusha! 👀</h1>
+
+      <p>
+        Someone made a tiny little something<br>
+        especially for your birthday. ✨
+      </p>
+
+      <button onclick="openSurprise()">
+        Open your surprise 🎁
+      </button>
+    </div>
+  </div>
+
+  <!-- Birthday screen -->
+  <div class="page hidden" id="screen2">
+    <div class="card">
+
+      <div class="emoji">🎂</div>
+
+      <h1>Happy 28th Birthday!</h1>
+
+      <h2>Nithyusha ✨</h2>
+
+      <p>
+        Wishing you a beautiful year filled with
+        happiness, laughter, amazing memories
+        and plenty of reasons to smile. 🌸
+      </p>
+
+      <button onclick="showFinal()">
+        One more thing... ✨
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Final screen -->
+  <div class="page hidden" id="screen3">
+    <div class="card">
+
+      <div class="emoji">🌷</div>
+
+      <h1>28 looks good on you! 😄</h1>
+
+      <p>
+        Hope this little surprise made you smile.
+        <br><br>
+        Have an absolutely wonderful birthday,
+        Nithyusha! 🎂✨
+      </p>
+
+      <button onclick="celebrate()">
+        Celebrate! 🎉
+      </button>
+
+    </div>
+  </div>
+
+  <script>
+
+    function openSurprise() {
+      document.getElementById("screen1").classList.add("hidden");
+      document.getElementById("screen2").classList.remove("hidden");
+
+      createConfetti();
+    }
+
+    function showFinal() {
+      document.getElementById("screen2").classList.add("hidden");
+      document.getElementById("screen3").classList.remove("hidden");
+
+      createConfetti();
+    }
+
+    function celebrate() {
+      createConfetti();
+    }
+
+    function createConfetti() {
+
+      const symbols = ["✨", "🎉", "🌸", "⭐", "🎈", "💫"];
+
+      for (let i = 0; i < 35; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerText =
+          symbols[Math.floor(Math.random() * symbols.length)];
+
+        piece.style.left = Math.random() * 100 + "vw";
+
+        piece.style.animationDuration =
+          (2.5 + Math.random() * 2.5) + "s";
+
+        piece.style.animationDelay =
+          Math.random() * 0.8 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+          piece.remove();
+        }, 5500);
+      }
+    }
+
+  </script>
+
+</body>
+</html>

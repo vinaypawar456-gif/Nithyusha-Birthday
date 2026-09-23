@@ -1,13 +1,8 @@
-
-Vinay Pawar <vinaypawar456@gmail.com>
-10:46 (0 minutes ago)
-to me
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>A Little Birthday Surprise 🎂</title>
 
 <style>
@@ -15,6 +10,11 @@ to me
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -30,45 +30,52 @@ body {
 
 .container {
     width: 100%;
-    max-width: 430px;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 22px;
+    padding: 14px;
     position: relative;
 }
 
 /* Floating balloons */
+
 .balloon {
     position: fixed;
-    font-size: 30px;
+    font-size: 27px;
     animation: float 5s ease-in-out infinite;
-    opacity: .8;
+    opacity: .75;
     pointer-events: none;
 }
 
-.b1 { top: 7%; left: 7%; animation-delay: 0s; }
-.b2 { top: 15%; right: 7%; animation-delay: 1s; }
-.b3 { bottom: 12%; left: 9%; animation-delay: 2s; }
-.b4 { bottom: 7%; right: 9%; animation-delay: 3s; }
+.b1 { top: 6%; left: 6%; }
+.b2 { top: 13%; right: 6%; animation-delay: 1s; }
+.b3 { bottom: 10%; left: 7%; animation-delay: 2s; }
+.b4 { bottom: 6%; right: 7%; animation-delay: 3s; }
 
 @keyframes float {
-    0%,100% { transform: translateY(0) rotate(-4deg); }
-    50% { transform: translateY(-15px) rotate(5deg); }
+    0%,100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-13px) rotate(5deg);
+    }
 }
 
 /* Main card */
+
 .card {
     width: 100%;
-    min-height: 610px;
-    padding: 35px 27px;
+    max-width: 430px;
+    height: min(720px, 94vh);
+    padding: 28px 24px;
     border-radius: 30px;
-    background: rgba(255,255,255,.78);
+    background: rgba(255,255,255,.80);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 20px 60px rgba(100,70,120,.18);
-    border: 1px solid rgba(255,255,255,.8);
+    border: 1px solid rgba(255,255,255,.85);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -77,63 +84,56 @@ body {
     text-align: center;
 }
 
-/* Opening screen */
+/* Opening */
+
 .opening {
     animation: appear .8s ease;
 }
 
-.opening .emoji {
-    font-size: 65px;
-    animation: bounce 2s infinite;
-    margin-bottom: 20px;
+.gift {
+    font-size: 76px;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    animation: giftBounce 1.8s infinite;
+    transition: transform .2s;
+}
+
+.gift:active {
+    transform: scale(.88);
 }
 
 .opening h1 {
-    font-size: 29px;
+    font-size: 27px;
     color: #7a4778;
-    margin-bottom: 14px;
+    margin-top: 20px;
+    margin-bottom: 12px;
 }
 
 .opening p {
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.65;
     color: #675b6d;
-    margin-bottom: 28px;
+    margin-bottom: 12px;
 }
 
-button {
-    border: none;
-    background: linear-gradient(135deg, #a35c96, #7657a8);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(118,87,168,.25);
-    transition: .25s;
-}
-
-button:active {
-    transform: scale(.95);
+.tap {
+    font-size: 13px;
+    color: #9a7ca0;
+    margin-top: 8px;
+    animation: pulse 1.8s infinite;
 }
 
 /* Pages */
+
 .page {
     display: none;
-    animation: pageIn .65s ease;
+    animation: pageIn .55s ease;
+    width: 100%;
 }
 
 .page.active {
     display: block;
-}
-
-.page-number {
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    color: #a27caa;
-    margin-bottom: 22px;
 }
 
 .page-title {
@@ -142,9 +142,11 @@ button:active {
     color: #754f78;
 }
 
+/* Main text */
+
 .content {
-    font-size: 17px;
-    line-height: 1.85;
+    font-size: 16px;
+    line-height: 1.78;
     color: #514653;
 }
 
@@ -155,18 +157,12 @@ button:active {
 
 .soft-highlight {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 8px;
     font-weight: 700;
     color: #7657a8;
 }
 
-.quote {
-    margin-top: 22px;
-    font-style: italic;
-    color: #806d87;
-}
-
-/* Page-specific accents */
+/* Page 1 */
 
 .page1 .page-title {
     color: #9b5d83;
@@ -176,6 +172,8 @@ button:active {
     color: #b04d7b;
 }
 
+/* Page 2 */
+
 .page2 .page-title {
     color: #7160a1;
 }
@@ -183,6 +181,8 @@ button:active {
 .page2 .highlight {
     color: #8b5da8;
 }
+
+/* Page 3 */
 
 .page3 .page-title {
     color: #4f7f91;
@@ -192,6 +192,8 @@ button:active {
     color: #4d8194;
 }
 
+/* Page 4 */
+
 .page4 .page-title {
     color: #9b617d;
 }
@@ -200,66 +202,78 @@ button:active {
     color: #a44e79;
 }
 
+/* Page 5 */
+
 .page5 {
     background: linear-gradient(
         145deg,
-        rgba(255,245,250,.9),
-        rgba(247,239,255,.9)
+        rgba(255,245,250,.92),
+        rgba(247,239,255,.92)
     );
 }
 
 .page5 .page-title {
-    font-size: 27px;
+    font-size: 25px;
     color: #9b4d78;
+    margin-bottom: 19px;
 }
 
 .page5 .content {
-    font-size: 16px;
-    line-height: 1.75;
+    font-size: 14.5px;
+    line-height: 1.58;
 }
 
 .page5 .big-highlight {
     display: block;
-    margin: 12px 0;
-    font-size: 19px;
+    margin-bottom: 13px;
+    font-size: 17px;
+    line-height: 1.55;
     font-weight: 700;
     color: #a34776;
 }
 
 .page5 .status {
-    margin-top: 22px;
-    padding: 14px;
-    border-radius: 18px;
+    margin-top: 16px;
+    padding: 11px;
+    border-radius: 16px;
     background: rgba(185,126,169,.12);
     color: #754d75;
     font-weight: 700;
+    line-height: 1.5;
 }
 
 /* Navigation */
+
 .nav {
-    margin-top: 28px;
+    margin-top: 23px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
 }
 
 .nav button {
-    padding: 10px 18px;
-    font-size: 14px;
+    border: none;
+    background: linear-gradient(135deg, #a35c96, #7657a8);
+    color: white;
+    padding: 9px 17px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.counter {
-    font-size: 13px;
-    color: #8a7b91;
+.nav button:active {
+    transform: scale(.94);
 }
 
 /* Animations */
+
 @keyframes appear {
     from {
         opacity: 0;
         transform: translateY(20px) scale(.97);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -269,20 +283,37 @@ button:active {
 @keyframes pageIn {
     from {
         opacity: 0;
-        transform: translateX(35px);
+        transform: translateX(25px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-@keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+@keyframes giftBounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%,100% {
+        opacity: .55;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Confetti */
+
 .confetti {
     position: fixed;
     top: -15px;
@@ -298,17 +329,44 @@ button:active {
     }
 }
 
-@media (max-height: 700px) {
+/* Smaller phones */
+
+@media (max-height: 680px) {
+
     .card {
-        min-height: 560px;
-        padding: 25px 23px;
+        height: 96vh;
+        padding: 20px 20px;
+    }
+
+    .page-title {
+        margin-bottom: 17px;
     }
 
     .content {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 14.5px;
+        line-height: 1.62;
+    }
+
+    .nav {
+        margin-top: 16px;
+    }
+
+    .page5 .content {
+        font-size: 13.5px;
+        line-height: 1.48;
+    }
+
+    .page5 .big-highlight {
+        font-size: 16px;
+        margin-bottom: 9px;
+    }
+
+    .page5 .status {
+        margin-top: 11px;
+        padding: 8px;
     }
 }
+
 </style>
 </head>
 
@@ -321,252 +379,261 @@ button:active {
 
 <div class="container">
 
-    <div class="card">
+<div class="card">
 
-        <!-- OPENING -->
-        <section class="opening" id="opening">
-            <div class="emoji">🎁</div>
+    <!-- OPENING -->
 
-            <h1>Hey Nithyusha…</h1>
+    <section class="opening" id="opening">
 
-            <p>
-                I made something small for your birthday. 😌<br>
-                Nothing too serious…<br>
-                Just open it and see.
-            </p>
+        <div class="gift" onclick="startSurprise()">
+            🎁
+        </div>
 
-            <button onclick="startSurprise()">
-                Open Your Surprise ✨
-            </button>
-        </section>
+        <h1>Hey Nithyusha…</h1>
+
+        <p>
+            I made something small for your birthday. 😌<br>
+            Nothing too serious…<br>
+            Just open it and see.
+        </p>
+
+        <div class="tap">
+            👆 Tap the gift
+        </div>
+
+    </section>
 
 
-        <!-- PAGE 1 -->
-        <section class="page page1" id="page1">
+    <!-- PAGE 1 -->
 
-            <div class="page-number">PAGE 01</div>
+    <section class="page page1" id="page1">
 
-            <div class="page-title">THEN 📍</div>
+        <div class="page-title">THEN 📍</div>
 
-            <div class="content">
+        <div class="content">
 
-                “Last year…<br>
-                Nizamabad lo normal year anukunna.
+            “Last year…<br>
+            Nizamabad lo normal year anukunna.
 
-                <br><br>
+            <br><br>
 
-                Kaani nuvvu undadam valla,<br>
+            Kaani nuvvu undadam valla,<br>
+
+            <span class="highlight">
+                normal year konchem extra special aipoyindi. 😂❤️
+            </span>
+
+            <br><br>
+
+            Appudu avi just days anukunna…<br>
+            ippudu venakki tirigi chusthe,<br>
+
+            <span class="soft-highlight">
+                avi actually memories ani ardham avtundi.
+            </span>
+
+        </div>
+
+        <div class="nav">
+            <span></span>
+            <button onclick="nextPage()">Next →</button>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 2 -->
+
+    <section class="page page2" id="page2">
+
+        <div class="page-title">THE RANDOM DAYS 🌙</div>
+
+        <div class="content">
+
+            “Mana best memories ki<br>
+            pedda plans em levu…
+
+            <br><br>
+
+            Random ga bayataki velladam,<br>
+            random ga tiragadam,<br>
+            random conversations,<br>
+            reason lekunda navvadam… 😂
+
+            <br><br>
+
+            Appudu avi anni normal.
+
+            <br><br>
+
+            Ippudu avi gurthosthe…<br>
+
+            <span class="highlight">
+                ‘Abba, those were some good days ra’
+            </span>
+
+            anipistundi. ❤️
+
+            <br><br>
+
+            <span class="soft-highlight">
+                Because you were there.
+            </span>
+
+        </div>
+
+        <div class="nav">
+            <button onclick="prevPage()">← Back</button>
+            <button onclick="nextPage()">Next →</button>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 3 -->
+
+    <section class="page page3" id="page3">
+
+        <div class="page-title">NOW 📍</div>
+
+        <div class="content">
+
+            <span class="highlight">
+                “Appudu:
+            </span><br>
+
+            ‘Ekkadiki veldam?’ ani plan chesevallam.
+
+            <br><br>
+
+            <span class="highlight">
+                Ippudu:
+            </span><br>
+
+            ‘Eppudu kalustam?’ ani plan cheyyalsi vastundi. 🥲😂
+
+            <br><br>
+
+            Nuvvu place marchav…
+
+            <br><br>
+
+            <span class="soft-highlight">
+                kaani mana memories matram<br>
+                Google Maps lo location change cheskoledu. 😂❤️
+            </span>
+
+            <br><br>
+
+            Akkade unnayi.
+
+        </div>
+
+        <div class="nav">
+            <button onclick="prevPage()">← Back</button>
+            <button onclick="nextPage()">Next →</button>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 4 -->
+
+    <section class="page page4" id="page4">
+
+        <div class="page-title">THE CONFESSION 👀</div>
+
+        <div class="content">
+
+            “And yes…
+
+            <br><br>
+
+            <span class="highlight">
+                nuvvu naa crush ani neeku already telusu. 😂
+            </span>
+
+            <br><br>
+
+            So, missing you ani cheppadaniki kuda<br>
+
+            <span class="soft-highlight">
+                special reason avasaram ledu kada?
+            </span>
+
+            😌❤️
+
+        </div>
+
+        <div class="nav">
+            <button onclick="prevPage()">← Back</button>
+            <button onclick="nextPage()">Next →</button>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 5 -->
+
+    <section class="page page5" id="page5">
+
+        <div class="page-title">🎂 BIRTHDAY GIRL</div>
+
+        <div class="content">
+
+            <span class="big-highlight">
+                “Happy Birthday to the girl<br>
+                who made my Nizamabad days<br>
+                a little more beautiful. ❤️
+            </span>
+
+            Nuvvu vere place ki shift ayyav,<br>
+            distance perigindi…
+
+            <br><br>
+
+            <span class="highlight">
+                kaani naa crush ki distance limit pettadam<br>
+                naa control lo ledu. 😂❤️
+            </span>
+
+            <br><br>
+
+            I genuinely miss those random outings,<br>
+            random talks, and most importantly…<br>
+
+            <span class="highlight">
+                having you around.
+            </span>
+
+            <br><br>
+
+            Have an amazing birthday, birthday girl. 🎂❤️
+
+            <div class="status">
+
+                P.S. — Crush status:<br>
+
                 <span class="highlight">
-                    normal year konchem extra special aipoyindi. 😂
+                    Still active. 😂❤️
                 </span>
-
-                <br><br>
-
-                Appudu avi just days anukunna…<br>
-                ippudu venakki tirigi chusthe,<br>
-
-                <span class="soft-highlight">
-                    avi actually memories ani ardham avtundi.
-                </span>
-
-            </div>
-
-            <div class="nav">
-                <span></span>
-                <button onclick="nextPage()">Next →</button>
-            </div>
-
-        </section>
-
-
-        <!-- PAGE 2 -->
-        <section class="page page2" id="page2">
-
-            <div class="page-number">PAGE 02</div>
-
-            <div class="page-title">THE RANDOM DAYS 🌙</div>
-
-            <div class="content">
-
-                “Mana best memories ki<br>
-                pedda plans em levu…
-
-                <br><br>
-
-                Random ga bayataki velladam,<br>
-                random ga tiragadam,<br>
-                random conversations,<br>
-                reason lekunda navvadam… 😂
-
-                <br><br>
-
-                Appudu avi anni normal.
-
-                <br><br>
-
-                Ippudu avi gurthosthe…<br>
-
-                <span class="highlight">
-                    ‘Abba, those were some good days ra’
-                </span>
-
-                anipistundi. ❤️
-
-                <br><br>
-
-                <span class="soft-highlight">
-                    Because you were there.
-                </span>
-
-            </div>
-
-            <div class="nav">
-                <button onclick="prevPage()">← Back</button>
-                <button onclick="nextPage()">Next →</button>
-            </div>
-
-        </section>
-
-
-        <!-- PAGE 3 -->
-        <section class="page page3" id="page3">
-
-            <div class="page-number">PAGE 03</div>
-
-            <div class="page-title">NOW 📍</div>
-
-            <div class="content">
-
-                <span class="highlight">
-                    “Appudu:
-                </span><br>
-                ‘Ekkadiki veldam?’ ani plan chesevallam.
-
-                <br><br>
-
-                <span class="highlight">
-                    Ippudu:
-                </span><br>
-                ‘Eppudu kalustam?’ ani plan cheyyalsi vastundi. 🥲😂
-
-                <br><br>
-
-                Nuvvu place marchav…
-
-                <br><br>
-
-                <span class="soft-highlight">
-                    kaani mana memories matram<br>
-                    Google Maps lo location change cheskoledu. 😂❤️
-                </span>
-
-                <br><br>
-
-                Akkade unnayi.
-
-            </div>
-
-            <div class="nav">
-                <button onclick="prevPage()">← Back</button>
-                <button onclick="nextPage()">Next →</button>
-            </div>
-
-        </section>
-
-
-        <!-- PAGE 4 -->
-        <section class="page page4" id="page4">
-
-            <div class="page-number">PAGE 04</div>
-
-            <div class="page-title">THE CONFESSION 👀</div>
-
-            <div class="content">
-
-                “And yes…
 
                 <br>
 
-                <span class="highlight">
-                    nuvvu naa crush ani neeku already telusu. 😂
-                </span>
-
-                <br><br>
-
-                So, missing you ani cheppadaniki kuda<br>
-
-                <span class="soft-highlight">
-                    special reason avasaram ledu kada?
-                </span>
-
-                😌❤️
+                Expiry date: Not available.
 
             </div>
 
-            <div class="nav">
-                <button onclick="prevPage()">← Back</button>
-                <button onclick="nextPage()">Next →</button>
-            </div>
+        </div>
 
-        </section>
+        <div class="nav">
+            <button onclick="prevPage()">← Back</button>
+            <span></span>
+        </div>
 
+    </section>
 
-        <!-- PAGE 5 -->
-        <section class="page page5" id="page5">
-
-            <div class="page-number">PAGE 05</div>
-
-            <div class="page-title">🎂 BIRTHDAY GIRL</div>
-
-            <div class="content">
-
-                <span class="big-highlight">
-                    “Happy Birthday to the girl<br>
-                    who made my Nizamabad days<br>
-                    a little more beautiful. ❤️
-                </span>
-
-                Nuvvu vere place ki shift ayyav,<br>
-                distance perigindi…
-
-                <br><br>
-
-                <span class="highlight">
-                    kaani naa crush ki distance limit pettadam<br>
-                    naa control lo ledu. 😂❤️
-                </span>
-
-                <br><br>
-
-                I genuinely miss those random outings,<br>
-                random talks, and most importantly…<br>
-
-                <span class="highlight">
-                    having you around.
-                </span>
-
-                <br><br>
-
-                Have an amazing birthday, birthday girl. 🎂❤️
-
-                <div class="status">
-                    P.S. — Crush status:<br>
-                    <span class="highlight">
-                        Still active. 😂❤️
-                    </span><br>
-                    Expiry date: Not available.
-                </div>
-
-            </div>
-
-            <div class="nav">
-                <button onclick="prevPage()">← Back</button>
-                <span></span>
-            </div>
-
-        </section>
-
-    </div>
+</div>
 </div>
 
 
@@ -582,6 +649,9 @@ const pages = [
     "page5"
 ];
 
+
+/* Open gift */
+
 function startSurprise() {
 
     document.getElementById("opening").style.display = "none";
@@ -591,6 +661,9 @@ function startSurprise() {
     document.getElementById(pages[currentPage])
         .classList.add("active");
 }
+
+
+/* Next */
 
 function nextPage() {
 
@@ -610,6 +683,9 @@ function nextPage() {
     }
 }
 
+
+/* Back */
+
 function prevPage() {
 
     if (currentPage > 0) {
@@ -625,19 +701,32 @@ function prevPage() {
 }
 
 
-/* Birthday confetti */
+/* Birthday celebration */
+
 function celebrate() {
 
-    const symbols = ["🎉", "✨", "🎈", "🎂", "⭐"];
+    const symbols = [
+        "🎉",
+        "✨",
+        "🎈",
+        "🎂",
+        "⭐",
+        "💖"
+    ];
 
     for (let i = 0; i < 35; i++) {
 
-        const confetti = document.createElement("div");
+        const confetti =
+            document.createElement("div");
 
         confetti.className = "confetti";
 
         confetti.innerText =
-            symbols[Math.floor(Math.random() * symbols.length)];
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
 
         confetti.style.left =
             Math.random() * 100 + "vw";

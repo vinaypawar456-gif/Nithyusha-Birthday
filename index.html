@@ -290,4 +290,432 @@ button:hover{
     font-size:22px;
     pointer-events:none;
     z-index:10;
-    animation:fall 
+    animation:fall 3.5s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Small phones */
+@media(max-width:390px){
+    .container{
+        padding:10px;
+    }
+
+    .card{
+        min-height:590px;
+        padding:25px 18px;
+        border-radius:25px;
+    }
+
+    .page h2{
+        font-size:27px;
+        margin-bottom:16px;
+    }
+
+    .page p{
+        font-size:15.5px;
+        line-height:1.6;
+        margin-bottom:15px;
+    }
+
+    .birthday-icon{
+        font-size:45px;
+    }
+
+    .page5 h2{
+        font-size:29px;
+    }
+
+    .birthday-main{
+        font-size:18px !important;
+    }
+
+    .distance-text{
+        font-size:15px !important;
+    }
+
+    .status-card{
+        padding:12px 14px;
+        margin:7px auto 12px;
+    }
+
+    button{
+        padding:10px 14px;
+        font-size:13px;
+    }
+}
+
+/* Very short screens */
+@media(max-height:680px){
+    .card{
+        min-height:540px;
+        padding:22px 18px;
+    }
+
+    .page p{
+        line-height:1.5;
+        margin-bottom:12px;
+    }
+
+    .page5 h2{
+        margin-bottom:8px;
+    }
+
+    .birthday-icon{
+        font-size:40px;
+    }
+
+    .birthday-main{
+        margin-bottom:9px !important;
+    }
+
+    .status-card{
+        margin:5px auto 10px;
+        padding:10px 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">💖</div>
+<div class="balloon b3">✨</div>
+<div class="balloon b4">🎈</div>
+
+<div class="container">
+
+    <!-- OPENING -->
+    <div class="card opening" id="opening">
+
+        <h1>Something for you 👀</h1>
+
+        <p>
+            Okay... birthday girl.<br>
+            There's a small surprise waiting for you. 😌
+        </p>
+
+        <!-- CLICK THE GIFT -->
+        <div class="gift" onclick="startSurprise()">🎁</div>
+
+        <div class="tap">
+            👆 Tap the gift
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 1 -->
+    <div class="card page" id="page1">
+
+        <h2>Last year... ❤️</h2>
+
+        <p>
+            Last year…<br>
+            <span class="soft">Nizamabad lo normal year anukunna.</span>
+            <br><br>
+
+            Kaani nuvvu undadam valla,<br>
+            <span class="highlight">
+                normal year konchem extra special aipoyindi. 😂❤️
+            </span>
+            <br><br>
+
+            Appudu avi just days anukunna…<br>
+
+            Ippudu venakki tirigi chusthe,<br>
+            <span class="highlight">
+                avi actually memories ani ardham avtundi.
+            </span>
+        </p>
+
+        <div class="nav">
+            <button onclick="nextPage()">There's more 👀</button>
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 2 -->
+    <div class="card page" id="page2">
+
+        <h2>The random days 😂</h2>
+
+        <p>
+            Mana best memories ki<br>
+            <span class="soft">pedda plans em levu…</span>
+            <br><br>
+
+            Random ga bayataki velladam,<br>
+            random ga tiragadam,<br>
+            random conversations,<br>
+            reason lekunda navvadam… 😂
+            <br><br>
+
+            Appudu avi anni normal.
+            <br><br>
+
+            Ippudu avi gurthosthe…<br>
+
+            <span class="highlight">
+                “Abba, those were some good days ra”
+            </span>
+            <br>
+            anipistundi. ❤️
+            <br><br>
+
+            <span class="green">
+                Because you were there.
+            </span>
+        </p>
+
+        <div class="nav">
+            <button onclick="prevPage()">← Wait, go back</button>
+            <button onclick="nextPage()">Remember this? →</button>
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 3 -->
+    <div class="card page" id="page3">
+
+        <h2>Now... 🥲</h2>
+
+        <p>
+            Appudu:<br>
+            <span class="orange">“Ekkadiki veldam?”</span>
+            ani plan chesevallam.
+            <br><br>
+
+            Ippudu:<br>
+            <span class="highlight">“Eppudu kalustam?”</span>
+            ani plan cheyyalsi vastundi. 🥲😂
+            <br><br>
+
+            Nuvvu place marchav…
+            <br><br>
+
+            kaani mana memories matram<br>
+            <span class="highlight">
+                Google Maps lo location change cheskoledu. 😂❤️
+            </span>
+            <br><br>
+
+            Akkade unnayi.
+        </p>
+
+        <div class="nav">
+            <button onclick="prevPage()">← One more look</button>
+            <button onclick="nextPage()">And then… →</button>
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 4 -->
+    <div class="card page" id="page4">
+
+        <h2>One thing though... ❤️</h2>
+
+        <p>
+            And yes…
+            <br>
+
+            <span class="highlight">
+                nuvvu naa crush ani neeku already telusu. 😂
+            </span>
+
+            <br><br>
+
+            So, missing you ani cheppadaniki kuda<br>
+            special reason avasaram ledu kada? 😌❤️
+            <br><br>
+
+            <span class="soft">
+                I genuinely miss those random outings,
+                random talks, and most importantly…
+                having you around. ❤️
+            </span>
+        </p>
+
+        <div class="nav">
+            <button onclick="prevPage()">← Go back</button>
+            <button onclick="nextPage()">One last thing… ❤️</button>
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 5 -->
+    <div class="card page page5" id="page5">
+
+        <div class="birthday-icon">🎂</div>
+
+        <h2>HAPPY BIRTHDAY ❤️</h2>
+
+        <p class="birthday-main">
+            to the girl who made my Nizamabad days
+            a little more beautiful. ❤️
+        </p>
+
+        <p class="distance-text">
+            Nuvvu vere place ki shift ayyav,<br>
+            distance perigindi…
+            <br><br>
+
+            kaani naa crush ki
+            <span class="highlight">
+                distance limit pettadam
+            </span>
+            naa control lo ledu. 😂❤️
+        </p>
+
+        <p class="punchline">
+            Have an amazing birthday, birthday girl. 🎂❤️
+        </p>
+
+        <div class="status-card">
+
+            <div class="status-title">
+                CRUSH STATUS
+            </div>
+
+            <div class="status-active">
+                💗 STILL ACTIVE
+            </div>
+
+            <div class="expiry">
+                Expiry date: Not available. 😂
+            </div>
+
+        </div>
+
+        <div class="nav">
+
+            <button onclick="prevPage()">
+                ↩️ Read it again
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let currentPage = 0;
+
+const pages = [
+    "page1",
+    "page2",
+    "page3",
+    "page4",
+    "page5"
+];
+
+
+function startSurprise(){
+
+    document.getElementById("opening").style.display = "none";
+
+    currentPage = 0;
+
+    document.getElementById(pages[currentPage])
+        .classList.add("active");
+}
+
+
+function nextPage(){
+
+    if(currentPage < pages.length - 1){
+
+        document.getElementById(pages[currentPage])
+            .classList.remove("active");
+
+        currentPage++;
+
+        document.getElementById(pages[currentPage])
+            .classList.add("active");
+
+        if(currentPage === pages.length - 1){
+            celebrate();
+        }
+    }
+}
+
+
+function prevPage(){
+
+    if(currentPage > 0){
+
+        document.getElementById(pages[currentPage])
+            .classList.remove("active");
+
+        currentPage--;
+
+        document.getElementById(pages[currentPage])
+            .classList.add("active");
+
+    }else{
+
+        document.getElementById(pages[currentPage])
+            .classList.remove("active");
+
+        document.getElementById("opening")
+            .style.display = "flex";
+
+    }
+}
+
+
+function celebrate(){
+
+    const emojis = [
+        "🎉",
+        "✨",
+        "🎈",
+        "🎂",
+        "⭐",
+        "💖",
+        "💕"
+    ];
+
+    for(let i = 0; i < 35; i++){
+
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.innerText =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.animationDuration =
+            (2.5 + Math.random() * 2) + "s";
+
+        confetti.style.fontSize =
+            (16 + Math.random() * 14) + "px";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+</script>
+
+</body>
+</html>

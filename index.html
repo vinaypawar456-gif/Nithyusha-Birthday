@@ -50,6 +50,42 @@ body{
     z-index:2;
 }
 
+.special-memory{
+    margin:18px auto 20px;
+    padding:14px 18px;
+    max-width:340px;
+ 
+    background:linear-gradient(135deg,#fff8b8,#fffdf0);
+    border-left:5px solid #f4c430;
+    border-radius:16px;
+ 
+    color:#8a6810;
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.5;
+ 
+    box-shadow:0 6px 20px rgba(244,196,48,.25);
+ 
+    animation:specialGlow 2.2s ease-in-out infinite;
+}
+ 
+.special-memory::before{
+    content:"✨";
+    margin-right:5px;
+}
+ 
+@keyframes specialGlow{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:0 6px 20px rgba(244,196,48,.20);
+    }
+    50%{
+        transform:scale(1.025);
+        box-shadow:0 8px 28px rgba(244,196,48,.38);
+    }
+}
+
 .card{
     width:100%;
     min-height:620px;
@@ -543,6 +579,10 @@ button:hover{
                 random talks, and most importantly…
                 having you around. ❤️
             </span>
+
+            <div class="special-memory">
+                Yellow chudidaar, white chunni tho dooche naa yeda… ❤️
+            </div>
         </p>
 
         <div class="nav">

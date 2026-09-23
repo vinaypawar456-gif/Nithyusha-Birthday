@@ -599,7 +599,7 @@ button:hover{
 
         <div class="nav">
 
-            <button onclick="prevPage()">
+            <button onclick="readAgain()">
                 ↩️ Read it again
             </button>
 
@@ -674,6 +674,16 @@ function prevPage(){
             .style.display = "flex";
 
     }
+}
+
+function readAgain(){
+ document.getElementById(pages[currentPage])
+            .classList.remove("active");    
+    currentPage = 0;
+
+ document.getElementById(pages[currentPage])
+            .classList.add("active"); 
+
 }
 
 

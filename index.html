@@ -4,40 +4,363 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You ❤️</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{min-height:100vh;font-family:"Segoe UI",sans-serif;background:linear-gradient(135deg,#ffd6e7,#ffeef5,#ffd9e8);display:flex;justify-content:center;align-items:center;overflow:hidden;color:#4a2634}
-.balloon{position:fixed;font-size:28px;animation:float 7s infinite ease-in-out;opacity:.65;pointer-events:none}.b1{left:7%;top:12%}.b2{right:8%;top:18%;animation-delay:2s}.b3{left:12%;bottom:15%;animation-delay:4s}.b4{right:12%;bottom:10%;animation-delay:1s}
-@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-25px) rotate(5deg)}}
-.container{width:100%;max-width:480px;padding:18px;position:relative;z-index:2}.card{width:100%;min-height:620px;background:rgba(255,255,255,.88);border-radius:30px;padding:35px 25px;box-shadow:0 20px 60px rgba(180,70,110,.25);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}
-.opening h1{font-size:30px;color:#d6336c;margin-bottom:15px}.opening p{font-size:17px;line-height:1.6;margin-bottom:25px}.gift{font-size:90px;cursor:pointer;user-select:none;transition:.3s;animation:giftBounce 1.6s infinite}.gift:hover{transform:scale(1.12)}@keyframes giftBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.tap{margin-top:12px;color:#d6336c;font-weight:600;font-size:15px}
-.page{display:none;width:100%}.page.active{display:flex;flex-direction:column;justify-content:center;align-items:center;animation:fadeIn .7s ease}@keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}.page h2{font-size:30px;color:#d6336c;margin-bottom:22px}.page p{font-size:17px;line-height:1.75;margin-bottom:20px}.highlight{color:#d6336c;font-weight:700}.soft{color:#9c4665;font-weight:600}.green{color:#16866b;font-weight:700}.orange{color:#e47722;font-weight:700}
-.nav{display:flex;justify-content:center;gap:10px;width:100%;margin-top:10px;flex-wrap:wrap;position:relative;z-index:5}button{border:none;padding:12px 18px;border-radius:25px;background:#d6336c;color:white;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 6px 15px rgba(214,51,108,.22);transition:.25s}button:hover{transform:translateY(-2px);background:#bd285b}
-.special-memory{margin:18px auto 20px;padding:14px 18px;max-width:340px;background:linear-gradient(135deg,#fff8b8,#fffdf0);border-left:5px solid #f4c430;border-radius:16px;color:#8a6810;font-family:"Segoe Print","Comic Sans MS",cursive;font-size:17px;font-weight:700;line-height:1.5;box-shadow:0 6px 20px rgba(244,196,48,.25);animation:specialGlow 2.2s ease-in-out infinite;position:relative;z-index:4}.special-memory::before{content:"✨";margin-right:5px}@keyframes specialGlow{0%,100%{transform:scale(1);box-shadow:0 6px 20px rgba(244,196,48,.20)}50%{transform:scale(1.025);box-shadow:0 8px 28px rgba(244,196,48,.38)}}
-.page5::before{content:"";position:absolute;width:260px;height:260px;background:rgba(255,105,160,.12);border-radius:50%;top:-120px;right:-100px;filter:blur(5px)}.page5::after{content:"";position:absolute;width:220px;height:220px;background:rgba(255,190,215,.18);border-radius:50%;bottom:-120px;left:-100px}.birthday-icon{font-size:52px;margin-bottom:8px;animation:pop 1.5s infinite ease-in-out}@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}.page5 h2{font-size:32px;margin-bottom:12px}.birthday-main{font-size:20px!important;line-height:1.55!important;font-weight:700;color:#8f3156;margin-bottom:14px!important}.distance-text{font-size:16px!important;line-height:1.55!important;margin-bottom:12px!important}.status-card{width:100%;max-width:330px;margin:10px auto 15px;padding:14px 16px;border-radius:20px;background:linear-gradient(135deg,#fff0f6,#ffe0eb);border:1px solid rgba(214,51,108,.18);box-shadow:0 8px 25px rgba(214,51,108,.12);position:relative;z-index:2}.status-title{font-size:13px;color:#9c4665;margin-bottom:4px;letter-spacing:.5px}.status-active{font-size:21px;font-weight:800;color:#d6336c;margin-bottom:3px}.expiry{font-size:13px;color:#777}.punchline{font-size:15px!important;margin-bottom:12px!important}
-.illustration{position:absolute;z-index:1;pointer-events:none;object-fit:contain;opacity:.98;filter:drop-shadow(0 5px 8px rgba(120,60,80,.10))}.p1img{width:115px;right:4px;bottom:62px}.p2img{width:115px;right:4px;bottom:62px}.p3img{width:115px;right:4px;bottom:62px}.p4img{width:130px;right:0;bottom:65px}.p5img{width:120px;right:0;bottom:62px}
-.confetti{position:fixed;top:-30px;font-size:22px;pointer-events:none;z-index:10;animation:fall 3.5s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
-@media(max-width:390px){.container{padding:10px}.card{min-height:590px;padding:25px 18px;border-radius:25px}.page h2{font-size:27px;margin-bottom:16px}.page p{font-size:15.5px;line-height:1.6;margin-bottom:15px}.birthday-icon{font-size:45px}.page5 h2{font-size:29px}.birthday-main{font-size:18px!important}.distance-text{font-size:15px!important}.status-card{padding:12px 14px;margin:7px auto 12px}button{padding:10px 14px;font-size:13px}.p1img,.p2img,.p3img{width:88px;bottom:58px}.p4img{width:102px;bottom:60px}.p5img{width:94px;bottom:58px}.special-memory{font-size:15px;padding:11px 13px;margin:12px auto 15px}}
-@media(max-height:680px){.card{min-height:540px;padding:22px 18px}.page p{line-height:1.5;margin-bottom:12px}.page5 h2{margin-bottom:8px}.birthday-icon{font-size:40px}.birthday-main{margin-bottom:9px!important}.status-card{margin:5px auto 10px;padding:10px 14px}.p1img,.p2img,.p3img{bottom:52px}.p4img,.p5img{bottom:52px}}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5,#ffd9e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    color:#4a2634;
+}
+
+.balloon{
+    position:fixed;
+    font-size:28px;
+    animation:float 7s infinite ease-in-out;
+    opacity:.65;
+    pointer-events:none;
+}
+
+.b1{left:7%;top:12%;animation-delay:0s;}
+.b2{right:8%;top:18%;animation-delay:2s;}
+.b3{left:12%;bottom:15%;animation-delay:4s;}
+.b4{right:12%;bottom:10%;animation-delay:1s;}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(-5deg);}
+    50%{transform:translateY(-25px) rotate(5deg);}
+}
+
+.container{
+    width:100%;
+    max-width:480px;
+    padding:18px;
+    position:relative;
+    z-index:2;
+}
+
+.card{
+    width:100%;
+    min-height:650px;
+    background:rgba(255,255,255,.95);
+    border-radius:30px;
+    padding:25px 20px;
+    box-shadow:0 20px 60px rgba(180,70,110,.25);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.card-img {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px auto;
+    box-shadow: 0 8px 20px rgba(214,51,108,0.18);
+}
+
+.special-memory{
+    margin:12px auto;
+    padding:10px 14px;
+    max-width:340px;
+    background:linear-gradient(135deg,#fff8b8,#fffdf0);
+    border-left:5px solid #f4c430;
+    border-radius:14px;
+    color:#8a6810;
+    font-weight:700;
+    font-size:14px;
+    line-height:1.4;
+    box-shadow:0 6px 20px rgba(244,196,48,.25);
+}
+
+.opening h1{
+    font-size:30px;
+    color:#d6336c;
+    margin-bottom:15px;
+}
+
+.opening p{
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.gift{
+    font-size:80px;
+    cursor:pointer;
+    user-select:none;
+    animation:giftBounce 1.6s infinite;
+}
+
+@keyframes giftBounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+.tap{
+    margin-top:12px;
+    color:#d6336c;
+    font-weight:600;
+    font-size:15px;
+}
+
+.page{
+    display:none;
+    width:100%;
+}
+
+.page.active{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    animation:fadeIn .7s ease;
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(15px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.page h2{
+    font-size:26px;
+    color:#d6336c;
+    margin-bottom:8px;
+}
+
+.page p{
+    font-size:15px;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+
+.highlight{ color:#d6336c; font-weight:700; }
+.soft{ color:#9c4665; font-weight:600; }
+.green{ color:#16866b; font-weight:700; }
+.orange{ color:#e47722; font-weight:700; }
+
+.nav{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    margin-top:8px;
+}
+
+button{
+    border:none;
+    padding:12px 18px;
+    border-radius:25px;
+    background:#d6336c;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 6px 15px rgba(214,51,108,.22);
+}
+
+.status-card{
+    width:100%;
+    max-width:300px;
+    margin:6px auto;
+    padding:10px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#fff0f6,#ffe0eb);
+    border:1px solid rgba(214,51,108,.18);
+}
+
+.status-title{ font-size:11px; color:#9c4665; }
+.status-active{ font-size:18px; font-weight:800; color:#d6336c; }
+.expiry{ font-size:11px; color:#777; }
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    font-size:22px;
+    pointer-events:none;
+    z-index:10;
+    animation:fall 3.5s linear forwards;
+}
+
+@keyframes fall{
+    to{ transform:translateY(110vh) rotate(360deg); opacity:0; }
+}
 </style>
 </head>
+
 <body>
-<div class="balloon b1">🎈</div><div class="balloon b2">💖</div><div class="balloon b3">✨</div><div class="balloon b4">🎈</div>
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">💖</div>
+<div class="balloon b3">✨</div>
+<div class="balloon b4">🎈</div>
+
 <div class="container">
-<div class="card opening" id="opening"><h1>Something for you 👀</h1><p>Okay... birthday girl.<br>There's a small surprise waiting for you. 😌</p><div class="gift" onclick="startSurprise()">🎁</div><div class="tap">👆 Tap the gift</div></div>
-<div class="card page" id="page1"><h2>Last year... ❤️</h2><p>Last year…<br><span class="soft">Nizamabad lo normal year anukunna.</span><br><br>Kaani nuvvu undadam valla,<br><span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br><br>Appudu avi just days anukunna…<br>Ippudu venakki tirigi chusthe,<br><span class="highlight">avi actually memories ani ardham avtundi.</span></p><img class="illustration p1img" src="images/page1-girl.png" alt=""><div class="nav"><button onclick="nextPage()">There's more 👀</button></div></div>
-<div class="card page" id="page2"><h2>The random days 😂</h2><p>Mana best memories ki<br><span class="soft">pedda plans em levu…</span><br><br>Random ga bayataki velladam,<br>random ga tiragadam,<br>random conversations,<br>reason lekunda navvadam… 😂<br><br>Appudu avi anni normal.<br><br>Ippudu avi gurthosthe…<br><span class="highlight">“Abba, those were some good days ra”</span><br>anipistundi. ❤️<br><br><span class="green">Because you were there.</span></p><img class="illustration p2img" src="images/page2-girl.png" alt=""><div class="nav"><button onclick="prevPage()">← Wait, go back</button><button onclick="nextPage()">Remember this? →</button></div></div>
-<div class="card page" id="page3"><h2>Now... 🥲</h2><p>Appudu:<br><span class="orange">“Ekkadiki veldam?”</span> ani plan chesevallam.<br><br>Ippudu:<br><span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br><br>Nuvvu place marchav…<br><br>kaani mana memories matram<br><span class="highlight">Google Maps lo location change cheskoledu. 😂❤️</span><br><br>Akkade unnayi.</p><img class="illustration p3img" src="images/page3-girl.png" alt=""><div class="nav"><button onclick="prevPage()">← One more look</button><button onclick="nextPage()">And then… →</button></div></div>
-<div class="card page" id="page4"><h2>One thing though... ❤️</h2><p>And yes…<br><span class="highlight">nuvvu naa crush ani neeku already telusu. 😂</span><br><br>So, missing you ani cheppadaniki kuda<br>special reason avasaram ledu kada? 😌❤️<br><br><span class="soft">I genuinely miss those random outings, random talks, and most importantly… having you around. ❤️</span></p><div class="special-memory">Yellow chudidaar, white chunni tho dooche naa yeda… ❤️</div><img class="illustration p4img" src="images/page4-girl.png" alt=""><div class="nav"><button onclick="prevPage()">← Go back</button><button onclick="nextPage()">One last thing… ❤️</button></div></div>
-<div class="card page page5" id="page5"><div class="birthday-icon">🎂</div><h2>HAPPY BIRTHDAY ❤️</h2><p class="birthday-main">to the girl who made my Nizamabad days a little more beautiful. ❤️</p><p class="distance-text">Nuvvu vere place ki shift ayyav,<br>distance perigindi…<br><br>kaani naa crush ki <span class="highlight">distance limit pettadam</span> naa control lo ledu. 😂❤️</p><p class="punchline">Have an amazing birthday, birthday girl. 🎂❤️</p><div class="status-card"><div class="status-title">CRUSH STATUS</div><div class="status-active">💗 STILL ACTIVE</div><div class="expiry">Expiry date: Not available. 😂</div></div><img class="illustration p5img" src="images/page5-girl.png" alt=""><div class="nav"><button onclick="readAgain()">↩️ Read it again</button></div></div>
+
+    <!-- OPENING -->
+    <div class="card opening" id="opening">
+        <h1>Something for you 👀</h1>
+        <p>Okay... birthday girl.<br>There's a small surprise waiting for you. 😌</p>
+        <div class="gift" onclick="startSurprise()">🎁</div>
+        <div class="tap">👆 Tap the gift</div>
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="card page" id="page1">
+        <h2>Last year... ❤️</h2>
+        <img src="page1-girl.png" alt="Gift moment" class="card-img">
+        <p>
+            Last year…<br><span class="soft">Nizamabad lo normal year anukunna.</span><br>
+            Kaani nuvvu undadam valla,<br>
+            <span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br>
+            Appudu avi just days anukunna…<br>
+            Ippudu venakki tirigi chusthe,<br>
+            <span class="highlight">avi actually memories ani ardham avtundi.</span>
+        </p>
+        <div class="nav">
+            <button onclick="nextPage()">There's more 👀</button>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="card page" id="page2">
+        <h2>The random days 😂</h2>
+        <img src="page2-girl.png" alt="Nizamabad outing" class="card-img">
+        <p>
+            Mana best memories ki <span class="soft">pedda plans em levu…</span><br>
+            Random ga bayataki velladam, random talks, reason lekunda navvadam… 😂<br>
+            Ippudu avi gurthosthe…<br>
+            <span class="highlight">“Abba, those were some good days ra”</span> anipistundi. ❤️<br>
+            <span class="green">Because you were there.</span>
+        </p>
+        <div class="nav">
+            <button onclick="prevPage()">← Go back</button>
+            <button onclick="nextPage()">Remember this? →</button>
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="card page" id="page3">
+        <h2>Now... 🥲</h2>
+        <img src="page3-girl.png" alt="Texting on phone" class="card-img">
+        <p>
+            Appudu: <span class="orange">“Ekkadiki veldam?”</span> ani plan chesevallam.<br>
+            Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br><br>
+            Nuvvu place marchav… kaani mana memories matram<br>
+            <span class="highlight">Google Maps lo location change cheskoledu. 😂❤️</span>
+        </p>
+        <div class="nav">
+            <button onclick="prevPage()">← Go back</button>
+            <button onclick="nextPage()">And then… →</button>
+        </div>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="card page" id="page4">
+        <h2>One thing though... ❤️</h2>
+        <img src="page4-girl.png" alt="Yellow dress moment" class="card-img">
+        <p>
+            And yes… <span class="highlight">nuvvu naa crush ani neeku already telusu. 😂</span><br>
+            I genuinely miss those random talks and having you around. ❤️
+        </p>
+        <div class="special-memory">
+            Yellow chudidaar, white chunni tho dochesav naa yeda… ❤️
+        </div>
+        <div class="nav">
+            <button onclick="prevPage()">← Go back</button>
+            <button onclick="nextPage()">One last thing… ❤️</button>
+        </div>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="card page" id="page5">
+        <h2>HAPPY BIRTHDAY ❤️</h2>
+        <img src="page5-girl.png" alt="Birthday cake wish" class="card-img">
+        <p style="font-weight:700; color:#8f3156;">
+            to the girl who made my Nizamabad days a little more beautiful. ❤️
+        </p>
+        <p style="font-size:13px;">
+            Nuvvu vere place ki shift ayyav, distance perigindi…<br>
+            kaani naa crush ki <span class="highlight">distance limit pettadam</span> naa control lo ledu. 😂❤️
+        </p>
+        <div class="status-card">
+            <div class="status-title">CRUSH STATUS</div>
+            <div class="status-active">💗 STILL ACTIVE</div>
+            <div class="expiry">Expiry date: Not available. 😂</div>
+        </div>
+        <div class="nav">
+            <button onclick="readAgain()">↩️ Read it again</button>
+        </div>
+    </div>
+
 </div>
+
 <script>
-let currentPage=0;const pages=["page1","page2","page3","page4","page5"];
-function startSurprise(){document.getElementById("opening").style.display="none";currentPage=0;document.getElementById(pages[currentPage]).classList.add("active");}
-function nextPage(){if(currentPage<pages.length-1){document.getElementById(pages[currentPage]).classList.remove("active");currentPage++;document.getElementById(pages[currentPage]).classList.add("active");if(currentPage===pages.length-1)celebrate();}}
-function prevPage(){if(currentPage>0){document.getElementById(pages[currentPage]).classList.remove("active");currentPage--;document.getElementById(pages[currentPage]).classList.add("active");}else{document.getElementById(pages[currentPage]).classList.remove("active");document.getElementById("opening").style.display="flex";}}
-function readAgain(){document.getElementById(pages[currentPage]).classList.remove("active");currentPage=0;document.getElementById(pages[currentPage]).classList.add("active");}
-function celebrate(){const emojis=["🎉","✨","🎈","🎂","⭐","💖","💕"];for(let i=0;i<35;i++){const c=document.createElement("div");c.className="confetti";c.innerText=emojis[Math.floor(Math.random()*emojis.length)];c.style.left=Math.random()*100+"vw";c.style.animationDuration=(2.5+Math.random()*2)+"s";c.style.fontSize=(16+Math.random()*14)+"px";document.body.appendChild(c);setTimeout(()=>c.remove(),5000);}}
+let currentPage = 0;
+const pages = ["page1", "page2", "page3", "page4", "page5"];
+
+function startSurprise(){
+    document.getElementById("opening").style.display = "none";
+    currentPage = 0;
+    document.getElementById(pages[currentPage]).classList.add("active");
+}
+
+function nextPage(){
+    if(currentPage < pages.length - 1){
+        document.getElementById(pages[currentPage]).classList.remove("active");
+        currentPage++;
+        document.getElementById(pages[currentPage]).classList.add("active");
+        if(currentPage === pages.length - 1) celebrate();
+    }
+}
+
+function prevPage(){
+    if(currentPage > 0){
+        document.getElementById(pages[currentPage]).classList.remove("active");
+        currentPage--;
+        document.getElementById(pages[currentPage]).classList.add("active");
+    }else{
+        document.getElementById(pages[currentPage]).classList.remove("active");
+        document.getElementById("opening").style.display = "flex";
+    }
+}
+
+function readAgain(){
+    document.getElementById(pages[currentPage]).classList.remove("active");    
+    currentPage = 0;
+    document.getElementById(pages[currentPage]).classList.add("active");
+}
+
+function celebrate(){
+    const emojis = ["🎉", "✨", "🎈", "🎂", "⭐", "💖"];
+    for(let i = 0; i < 30; i++){
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration = (2.5 + Math.random() * 2) + "s";
+        confetti.style.fontSize = (16 + Math.random() * 14) + "px";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+    }
+}
 </script>
+
 </body>
 </html>

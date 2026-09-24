@@ -14,7 +14,7 @@
 
 body{
     min-height:100vh;
-    font-family:"Segoe UI",sans-serif;
+    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background:linear-gradient(135deg,#ffd6e7,#ffeef5,#ffd9e8);
     display:flex;
     justify-content:center;
@@ -51,10 +51,10 @@ body{
 
 .card{
     width:100%;
-    min-height:620px;
-    background:rgba(255,255,255,.95);
+    min-height:640px;
+    background:rgba(255,255,255,.96);
     border-radius:30px;
-    padding:25px 20px;
+    padding:28px 24px;
     box-shadow:0 20px 60px rgba(180,70,110,.25);
     display:flex;
     flex-direction:column;
@@ -65,22 +65,31 @@ body{
     overflow:hidden;
 }
 
-/* Full Image - No Cropping */
-.card-img {
+/* Compact Polaroid Frame to give text full space */
+.card-img-wrapper {
     width: 100%;
-    max-width: 320px;
-    height: 220px;
-    object-fit: contain;
-    background: rgba(255, 230, 240, 0.4);
-    border-radius: 16px;
-    margin: 8px auto;
-    padding: 4px;
-    box-shadow: 0 4px 15px rgba(214,51,108,0.12);
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 16px 0;
+}
+
+.card-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(214,51,108,0.2);
+    border: 4px solid #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.04) rotate(-1deg);
 }
 
 .special-memory{
-    margin:10px auto;
-    padding:10px 14px;
+    margin:12px auto;
+    padding:10px 16px;
     max-width:340px;
     background:linear-gradient(135deg,#fff8b8,#fffdf0);
     border-left:5px solid #f4c430;
@@ -134,6 +143,7 @@ body{
     justify-content:space-between;
     align-items:center;
     animation:fadeIn .7s ease;
+    height: 100%;
 }
 
 @keyframes fadeIn{
@@ -142,15 +152,18 @@ body{
 }
 
 .page h2{
-    font-size:26px;
+    font-size:28px;
     color:#d6336c;
-    margin-bottom:8px;
+    margin-bottom:6px;
+    font-weight:800;
 }
 
+/* Spacious, readable paragraph styling */
 .page p{
-    font-size:15px;
-    line-height:1.55;
-    margin-bottom:8px;
+    font-size:16px;
+    line-height:1.75;
+    margin-bottom:12px;
+    color:#4a2634;
 }
 
 .highlight{ color:#d6336c; font-weight:700; }
@@ -161,14 +174,14 @@ body{
 .nav{
     display:flex;
     justify-content:center;
-    gap:10px;
+    gap:12px;
     width:100%;
-    margin-top:8px;
+    margin-top:12px;
 }
 
 button{
     border:none;
-    padding:12px 18px;
+    padding:12px 22px;
     border-radius:25px;
     background:#d6336c;
     color:white;
@@ -176,19 +189,25 @@ button{
     font-weight:600;
     cursor:pointer;
     box-shadow:0 6px 15px rgba(214,51,108,.22);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover{
+    background:#c2255c;
+    transform:translateY(-2px);
 }
 
 .status-card{
     width:100%;
     max-width:300px;
-    margin:6px auto;
-    padding:10px;
+    margin:8px auto;
+    padding:10px 14px;
     border-radius:16px;
     background:linear-gradient(135deg,#fff0f6,#ffe0eb);
     border:1px solid rgba(214,51,108,.18);
 }
 
-.status-title{ font-size:11px; color:#9c4665; }
+.status-title{ font-size:11px; color:#9c4665; letter-spacing:0.5px; }
 .status-active{ font-size:18px; font-weight:800; color:#d6336c; }
 .expiry{ font-size:11px; color:#777; }
 
@@ -227,9 +246,12 @@ button{
     <!-- PAGE 1 -->
     <div class="card page" id="page1">
         <h2>Last year... ❤️</h2>
-        <img src="page1-girl.png" alt="Gift moment" class="card-img">
+        <div class="card-img-wrapper">
+            <img src="page1-girl.png" alt="Gift moment" class="card-img">
+        </div>
         <p>
-            Last year…<br><span class="soft">Nizamabad lo normal year anukunna.</span><br>
+            Last year…<br>
+            <span class="soft">Nizamabad lo normal year anukunna.</span><br><br>
             Kaani nuvvu undadam valla,<br>
             <span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br><br>
             Appudu avi just days anukunna…<br>
@@ -244,7 +266,9 @@ button{
     <!-- PAGE 2 -->
     <div class="card page" id="page2">
         <h2>The random days 😂</h2>
-        <img src="page2-girl.png" alt="Nizamabad outing" class="card-img">
+        <div class="card-img-wrapper">
+            <img src="page2-girl.png" alt="Nizamabad outing" class="card-img">
+        </div>
         <p>
             Mana best memories ki <span class="soft">pedda plans em levu…</span><br><br>
             Random ga bayataki velladam, random talks, reason lekunda navvadam… 😂<br><br>
@@ -261,7 +285,9 @@ button{
     <!-- PAGE 3 -->
     <div class="card page" id="page3">
         <h2>Now... 🥲</h2>
-        <img src="page3-girl.png" alt="Texting on phone" class="card-img">
+        <div class="card-img-wrapper">
+            <img src="page3-girl.png" alt="Texting on phone" class="card-img">
+        </div>
         <p>
             Appudu: <span class="orange">“Ekkadiki veldam?”</span> ani plan chesevallam.<br>
             Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br><br>
@@ -277,7 +303,9 @@ button{
     <!-- PAGE 4 -->
     <div class="card page" id="page4">
         <h2>One thing though... ❤️</h2>
-        <img src="page4-girl.png" alt="Yellow dress moment" class="card-img">
+        <div class="card-img-wrapper">
+            <img src="page4-girl.png" alt="Yellow dress moment" class="card-img">
+        </div>
         <p>
             And yes… <span class="highlight">nuvvu naa crush ani neeku already telusu. 😂</span><br>
             I genuinely miss those random talks and having you around. ❤️
@@ -294,11 +322,13 @@ button{
     <!-- PAGE 5 -->
     <div class="card page" id="page5">
         <h2>HAPPY BIRTHDAY ❤️</h2>
-        <img src="page5-girl.png" alt="Birthday cake wish" class="card-img">
+        <div class="card-img-wrapper">
+            <img src="page5-girl.png" alt="Birthday cake wish" class="card-img">
+        </div>
         <p style="font-weight:700; color:#8f3156;">
             to the girl who made my Nizamabad days a little more beautiful. ❤️
         </p>
-        <p style="font-size:13px;">
+        <p style="font-size:14px;">
             Nuvvu vere place ki shift ayyav, distance perigindi…<br>
             kaani naa crush ki <span class="highlight">distance limit pettadam</span> naa control lo ledu. 😂❤️
         </p>

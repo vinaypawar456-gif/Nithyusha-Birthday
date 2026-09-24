@@ -1,3 +1,5 @@
+GEMINI
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +68,7 @@ body{
     line-height:1.5;
  
     box-shadow:0 6px 20px rgba(244,196,48,.25);
+ 
     animation:specialGlow 2.2s ease-in-out infinite;
 }
  
@@ -88,9 +91,9 @@ body{
 .card{
     width:100%;
     min-height:620px;
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.88);
     border-radius:30px;
-    padding:30px 22px;
+    padding:35px 25px;
     box-shadow:0 20px 60px rgba(180,70,110,.25);
     display:flex;
     flex-direction:column;
@@ -101,18 +104,18 @@ body{
     overflow:hidden;
 }
 
-/* Girl Cartoon Container */
-.girl-cartoon {
-    width: 200px;
-    height: 180px;
+/* Cartoon Graphic Containers */
+.cartoon-img {
+    width: 140px;
+    height: 140px;
     margin: 0 auto 15px auto;
-    filter: drop-shadow(0 8px 16px rgba(214,51,108,0.18));
-    animation: floatGirl 3s infinite ease-in-out;
+    filter: drop-shadow(0 8px 12px rgba(214,51,108,0.18));
+    animation: cartoonBounce 2.2s infinite ease-in-out;
 }
 
-@keyframes floatGirl {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+@keyframes cartoonBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
 }
 
 /* Opening */
@@ -131,11 +134,11 @@ body{
 .gift{
     width: 120px;
     height: 120px;
-    margin: 0 auto;
     cursor:pointer;
     user-select:none;
     transition:.3s;
     animation:giftBounce 1.6s infinite;
+    margin: 0 auto;
 }
 
 .gift:hover{
@@ -180,15 +183,15 @@ body{
 }
 
 .page h2{
-    font-size:28px;
+    font-size:30px;
     color:#d6336c;
-    margin-bottom:16px;
+    margin-bottom:18px;
 }
 
 .page p{
-    font-size:16px;
-    line-height:1.65;
-    margin-bottom:16px;
+    font-size:17px;
+    line-height:1.75;
+    margin-bottom:20px;
 }
 
 /* Highlight lines */
@@ -269,30 +272,30 @@ button:hover{
 }
 
 .page5 h2{
-    font-size:30px;
-    margin-bottom:10px;
+    font-size:32px;
+    margin-bottom:12px;
 }
 
 .birthday-main{
-    font-size:18px !important;
-    line-height:1.5 !important;
+    font-size:20px !important;
+    line-height:1.55 !important;
     font-weight:700;
     color:#8f3156;
-    margin-bottom:10px !important;
+    margin-bottom:14px !important;
 }
 
 .distance-text{
-    font-size:15px !important;
-    line-height:1.5 !important;
-    margin-bottom:10px !important;
+    font-size:16px !important;
+    line-height:1.55 !important;
+    margin-bottom:12px !important;
 }
 
 .status-card{
     width:100%;
-    max-width:320px;
-    margin:8px auto 12px;
-    padding:12px 16px;
-    border-radius:18px;
+    max-width:330px;
+    margin:10px auto 15px;
+    padding:14px 16px;
+    border-radius:20px;
     background:linear-gradient(135deg,#fff0f6,#ffe0eb);
     border:1px solid rgba(214,51,108,.18);
     box-shadow:0 8px 25px rgba(214,51,108,.12);
@@ -301,27 +304,27 @@ button:hover{
 }
 
 .status-title{
-    font-size:12px;
+    font-size:13px;
     color:#9c4665;
-    margin-bottom:3px;
+    margin-bottom:4px;
     letter-spacing:.5px;
 }
 
 .status-active{
-    font-size:20px;
+    font-size:21px;
     font-weight:800;
     color:#d6336c;
-    margin-bottom:2px;
+    margin-bottom:3px;
 }
 
 .expiry{
-    font-size:12px;
+    font-size:13px;
     color:#777;
 }
 
 .punchline{
-    font-size:14px !important;
-    margin-bottom:10px !important;
+    font-size:15px !important;
+    margin-bottom:12px !important;
 }
 
 .confetti{
@@ -340,33 +343,86 @@ button:hover{
     }
 }
 
-/* Responsive adjustments */
+/* Small phones */
 @media(max-width:390px){
     .container{
         padding:10px;
     }
 
     .card{
-        min-height:580px;
-        padding:22px 16px;
+        min-height:590px;
+        padding:25px 18px;
+        border-radius:25px;
     }
 
-    .girl-cartoon {
-        width: 170px;
-        height: 150px;
+    .cartoon-img {
+        width: 110px;
+        height: 110px;
     }
 
     .page h2{
-        font-size:24px;
+        font-size:27px;
+        margin-bottom:16px;
     }
 
     .page p{
-        font-size:14.5px;
+        font-size:15.5px;
+        line-height:1.6;
+        margin-bottom:15px;
+    }
+
+    .page5 h2{
+        font-size:29px;
+    }
+
+    .birthday-main{
+        font-size:18px !important;
+    }
+
+    .distance-text{
+        font-size:15px !important;
+    }
+
+    .status-card{
+        padding:12px 14px;
+        margin:7px auto 12px;
     }
 
     button{
         padding:10px 14px;
         font-size:13px;
+    }
+}
+
+/* Very short screens */
+@media(max-height:680px){
+    .card{
+        min-height:540px;
+        padding:22px 18px;
+    }
+
+    .cartoon-img {
+        width: 95px;
+        height: 95px;
+        margin-bottom: 8px;
+    }
+
+    .page p{
+        line-height:1.5;
+        margin-bottom:12px;
+    }
+
+    .page5 h2{
+        margin-bottom:8px;
+    }
+
+    .birthday-main{
+        margin-bottom:9px !important;
+    }
+
+    .status-card{
+        margin:5px auto 10px;
+        padding:10px 14px;
     }
 }
 </style>
@@ -394,11 +450,13 @@ button:hover{
         <!-- CLICK THE GIFT -->
         <div class="gift" onclick="startSurprise()">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <rect x="35" y="80" width="130" height="90" rx="15" fill="#d6336c"/>
-                <rect x="25" y="60" width="150" height="28" rx="10" fill="#ff6b81"/>
-                <rect x="85" y="60" width="30" height="110" fill="#FFD700"/>
-                <path d="M 65 35 C 40 10, 90 10, 95 60 Z" fill="#FFD700"/>
-                <path d="M 135 35 C 160 10, 110 10, 105 60 Z" fill="#FFD700"/>
+                <rect x="40" y="80" width="120" height="90" rx="12" fill="#ff4757"/>
+                <rect x="30" y="60" width="140" height="30" rx="8" fill="#ff6b81"/>
+                <rect x="90" y="60" width="20" height="110" fill="#FFD700"/>
+                <!-- Bow -->
+                <path d="M 70 40 C 50 10, 90 20, 95 60 Z" fill="#FFD700"/>
+                <path d="M 130 40 C 150 10, 110 20, 105 60 Z" fill="#FFD700"/>
+                <circle cx="100" cy="55" r="10" fill="#FFA500"/>
             </svg>
         </div>
 
@@ -412,33 +470,15 @@ button:hover{
     <!-- PAGE 1 -->
     <div class="card page" id="page1">
 
-        <!-- Cartoon Girl with Gift Box -->
-        <div class="girl-cartoon">
-            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Hair back -->
-                <path d="M 50 70 Q 100 10 150 70 Q 170 140 150 170 L 50 170 Q 30 140 50 70 Z" fill="#2d3436"/>
-                <!-- Face -->
-                <circle cx="100" cy="80" r="42" fill="#ffdfd3"/>
-                <!-- Hair front/bangs -->
-                <path d="M 60 60 Q 100 35 140 60 Q 120 45 100 50 Q 80 45 60 60 Z" fill="#2d3436"/>
-                <!-- Eyes -->
-                <ellipse cx="85" cy="78" rx="5" ry="7" fill="#2d3436"/>
-                <ellipse cx="115" cy="78" rx="5" ry="7" fill="#2d3436"/>
-                <circle cx="87" cy="76" r="2" fill="#FFF"/>
-                <circle cx="117" cy="76" r="2" fill="#FFF"/>
-                <!-- Blush & Smile -->
-                <ellipse cx="78" cy="88" rx="7" ry="4" fill="#ff7675" opacity="0.6"/>
-                <ellipse cx="122" cy="88" rx="7" ry="4" fill="#ff7675" opacity="0.6"/>
-                <path d="M 93 90 Q 100 97 107 90" stroke="#d6336c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                <!-- Dress -->
-                <path d="M 70 120 Q 100 110 130 120 L 140 180 L 60 180 Z" fill="#2e86de"/>
-                <!-- Gift in Hands -->
-                <rect x="75" y="125" width="50" height="40" rx="6" fill="#ff4757"/>
-                <rect x="95" y="125" width="10" height="40" fill="#FFD700"/>
-                <rect x="75" y="140" width="50" height="10" fill="#FFD700"/>
-                <!-- Hearts -->
-                <text x="35" y="45" font-size="20">💖</text>
-                <text x="145" y="40" font-size="20">✨</text>
+        <!-- Cartoon Clock / Nostalgia Illustration -->
+        <div class="cartoon-img">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="75" fill="#FFEAA7" stroke="#FF7675" stroke-width="8"/>
+                <circle cx="100" cy="100" r="8" fill="#D63031"/>
+                <line x1="100" y1="100" x2="100" y2="50" stroke="#D63031" stroke-width="7" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="135" y2="100" stroke="#D63031" stroke-width="7" stroke-linecap="round"/>
+                <circle cx="65" cy="50" r="12" fill="#FF7675"/>
+                <circle cx="135" cy="50" r="12" fill="#FF7675"/>
             </svg>
         </div>
 
@@ -448,12 +488,15 @@ button:hover{
             Last year…<br>
             <span class="soft">Nizamabad lo normal year anukunna.</span>
             <br><br>
+
             Kaani nuvvu undadam valla,<br>
             <span class="highlight">
                 normal year konchem extra special aipoyindi. 😂❤️
             </span>
             <br><br>
+
             Appudu avi just days anukunna…<br>
+
             Ippudu venakki tirigi chusthe,<br>
             <span class="highlight">
                 avi actually memories ani ardham avtundi.
@@ -470,47 +513,46 @@ button:hover{
     <!-- PAGE 2 -->
     <div class="card page" id="page2">
 
-        <!-- Cartoon Girl Walking Outdoors -->
-        <div class="girl-cartoon">
-            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Hair -->
-                <path d="M 45 60 C 30 120, 60 180, 70 180 C 80 180, 120 180, 130 180 C 140 180, 170 120, 155 60 C 145 15, 55 15, 45 60 Z" fill="#353b48"/>
-                <!-- Face -->
-                <circle cx="100" cy="70" r="40" fill="#ffdfd3"/>
-                <!-- Bangs -->
-                <path d="M 62 50 Q 100 30 138 50 Q 115 40 100 45 Q 85 40 62 50 Z" fill="#353b48"/>
-                <!-- Eyes wink -->
-                <ellipse cx="85" cy="70" rx="5" ry="7" fill="#2d3436"/>
-                <circle cx="87" cy="68" r="2" fill="#FFF"/>
-                <path d="M 110 70 Q 117 62 124 70" stroke="#2d3436" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                <!-- Smile & Blush -->
-                <ellipse cx="76" cy="78" rx="6" ry="3.5" fill="#ff7675" opacity="0.6"/>
-                <ellipse cx="124" cy="78" rx="6" ry="3.5" fill="#ff7675" opacity="0.6"/>
-                <path d="M 94 80 Q 100 86 106 80" stroke="#d6336c" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <!-- Dress White with Flowers -->
-                <path d="M 70 110 Q 100 100 130 110 L 145 180 L 55 180 Z" fill="#f5f6fa"/>
-                <circle cx="85" cy="135" r="4" fill="#ff4757"/>
-                <circle cx="115" cy="150" r="4" fill="#ff4757"/>
-                <circle cx="95" cy="165" r="4" fill="#ff1493"/>
-                <!-- Shoulder Bag -->
-                <path d="M 75 110 Q 110 145 125 150" stroke="#2d3436" stroke-width="3" fill="none"/>
-                <rect x="118" y="145" width="18" height="22" rx="4" fill="#2d3436"/>
+        <!-- Cartoon Fun & Laughter Illustration -->
+        <div class="cartoon-img">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="75" fill="#FF7675"/>
+                <circle cx="70" cy="80" r="10" fill="#2D3436"/>
+                <circle cx="130" cy="80" r="10" fill="#2D3436"/>
+                <path d="M 60 115 Q 100 165 140 115" stroke="#2D3436" stroke-width="8" fill="#FFF" stroke-linecap="round"/>
+                <path d="M 45 65 Q 70 50 85 65" stroke="#2D3436" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M 115 65 Q 130 50 155 65" stroke="#2D3436" stroke-width="5" fill="none" stroke-linecap="round"/>
             </svg>
         </div>
 
         <h2>The random days 😂</h2>
 
         <p>
-            Mana best memories ki <span class="soft">pedda plans em levu…</span><br><br>
-            Random ga bayataki velladam, random talks, reason lekunda navvadam… 😂
+            Mana best memories ki<br>
+            <span class="soft">pedda plans em levu…</span>
             <br><br>
+
+            Random ga bayataki velladam,<br>
+            random ga tiragadam,<br>
+            random conversations,<br>
+            reason lekunda navvadam… 😂
+            <br><br>
+
+            Appudu avi anni normal.
+            <br><br>
+
             Ippudu avi gurthosthe…<br>
+
             <span class="highlight">
                 “Abba, those were some good days ra”
             </span>
+            <br>
             anipistundi. ❤️
             <br><br>
-            <span class="green">Because you were there.</span>
+
+            <span class="green">
+                Because you were there.
+            </span>
         </p>
 
         <div class="nav">
@@ -524,40 +566,38 @@ button:hover{
     <!-- PAGE 3 -->
     <div class="card page" id="page3">
 
-        <!-- Cartoon Girl looking at Phone -->
-        <div class="girl-cartoon">
-            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Hair Bun -->
-                <circle cx="100" cy="25" r="22" fill="#2d3436"/>
-                <circle cx="100" cy="70" r="42" fill="#ffdfd3"/>
-                <!-- Hair strands -->
-                <path d="M 60 55 Q 100 35 140 55 Q 120 40 100 45 Q 80 40 60 55 Z" fill="#2d3436"/>
-                <!-- Downward Looking Eyes -->
-                <path d="M 80 72 Q 87 78 94 72" stroke="#2d3436" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <path d="M 106 72 Q 113 78 120 72" stroke="#2d3436" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <!-- Smile -->
-                <path d="M 94 85 Q 100 90 106 85" stroke="#d6336c" stroke-width="2" fill="none"/>
-                <!-- Cozy Sweater -->
-                <path d="M 60 110 Q 100 100 140 110 L 150 180 L 50 180 Z" fill="#353b48"/>
-                <!-- Hands Holding Phone -->
-                <rect x="85" y="115" width="30" height="50" rx="5" fill="#8c7ae6" transform="rotate(-10 100 140)"/>
-                <rect x="88" y="118" width="24" height="42" rx="3" fill="#00a8ff" transform="rotate(-10 100 140)"/>
-                <!-- Floating Notification Hearts -->
-                <text x="135" y="90" font-size="18">💬</text>
-                <text x="145" y="120" font-size="18">💙</text>
+        <!-- Cartoon Location / Google Maps Pin Illustration -->
+        <div class="cartoon-img">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 100 20 C 60 20 30 50 30 90 C 30 140 100 185 100 185 C 100 185 170 140 170 90 C 170 50 140 20 100 20 Z" fill="#FF5252"/>
+                <circle cx="100" cy="80" r="30" fill="#FFF"/>
+                <path d="M 85 80 L 115 80 M 100 65 L 100 95" stroke="#FF5252" stroke-width="6" stroke-linecap="round"/>
             </svg>
         </div>
 
         <h2>Now... 🥲</h2>
 
         <p>
-            Appudu: <span class="orange">“Ekkadiki veldam?”</span> ani plan chesevallam.<br>
-            Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂
+            Appudu:<br>
+            <span class="orange">“Ekkadiki veldam?”</span>
+            ani plan chesevallam.
             <br><br>
-            Nuvvu place marchav… kaani mana memories matram<br>
+
+            Ippudu:<br>
+            <span class="highlight">“Eppudu kalustam?”</span>
+            ani plan cheyyalsi vastundi. 🥲😂
+            <br><br>
+
+            Nuvvu place marchav…
+            <br><br>
+
+            kaani mana memories matram<br>
             <span class="highlight">
                 Google Maps lo location change cheskoledu. 😂❤️
             </span>
+            <br><br>
+
+            Akkade unnayi.
         </p>
 
         <div class="nav">
@@ -571,42 +611,41 @@ button:hover{
     <!-- PAGE 4 -->
     <div class="card page" id="page4">
 
-        <!-- Cartoon Girl in Yellow Dress -->
-        <div class="girl-cartoon">
-            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Hair long -->
-                <path d="M 40 70 Q 100 10 160 70 Q 175 140 155 180 L 45 180 Q 25 140 40 70 Z" fill="#1e272e"/>
-                <!-- Face -->
-                <circle cx="100" cy="75" r="40" fill="#ffdfd3"/>
-                <!-- Hair Bangs -->
-                <path d="M 62 55 Q 100 35 138 55 Q 115 45 100 48 Q 85 45 62 55 Z" fill="#1e272e"/>
-                <!-- Soft Eyes -->
-                <ellipse cx="84" cy="73" rx="5" ry="6" fill="#1e272e"/>
-                <ellipse cx="116" cy="73" rx="5" ry="6" fill="#1e272e"/>
-                <circle cx="86" cy="71" r="2" fill="#FFF"/>
-                <circle cx="118" cy="71" r="2" fill="#FFF"/>
-                <!-- Shy Smile & Cheeks -->
-                <ellipse cx="75" cy="82" rx="6" ry="4" fill="#ff7675" opacity="0.6"/>
-                <ellipse cx="125" cy="82" rx="6" ry="4" fill="#ff7675" opacity="0.6"/>
-                <path d="M 94 85 Q 100 91 106 85" stroke="#d6336c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                <!-- Yellow Dress -->
-                <path d="M 65 115 Q 100 105 135 115 L 150 180 L 50 180 Z" fill="#fbc531"/>
-                <!-- White Chunni / Dupatta -->
-                <path d="M 60 115 Q 100 145 140 115 Q 120 180 60 115 Z" fill="#f5f6fa" opacity="0.85"/>
+        <!-- Cartoon Cute Envelope/Love Letter Illustration -->
+        <div class="cartoon-img">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect x="25" y="50" width="150" height="100" rx="12" fill="#74B9FF"/>
+                <path d="M 25 50 L 100 105 L 175 50" fill="#0984E3"/>
+                <path d="M 100 110 C 80 85 50 95 65 115 C 80 135 100 145 100 145 C 100 145 120 135 135 115 C 150 95 120 85 100 110 Z" fill="#FF7675"/>
             </svg>
         </div>
 
         <h2>One thing though... ❤️</h2>
 
         <p>
-            And yes… <span class="highlight">nuvvu naa crush ani neeku already telusu. 😂</span>
-            <br><br>
-            I genuinely miss those random talks and having you around. ❤️
-        </p>
+            And yes…
+            <br>
 
-        <div class="special-memory">
-            Yellow chudidaar, white chunni tho dochesav naa yeda… ❤️
-        </div>
+            <span class="highlight">
+                nuvvu naa crush ani neeku already telusu. 😂
+            </span>
+
+            <br><br>
+
+            So, missing you ani cheppadaniki kuda<br>
+            special reason avasaram ledu kada? 😌❤️
+            <br><br>
+
+            <span class="soft">
+                I genuinely miss those random outings,
+                random talks, and most importantly…
+                having you around. ❤️
+            </span>
+
+            <div class="special-memory">
+                Yellow chudidaar, white chunni tho dochesav naa yeda… ❤️
+            </div>
+        </p>
 
         <div class="nav">
             <button onclick="prevPage()">← Go back</button>
@@ -619,45 +658,38 @@ button:hover{
     <!-- PAGE 5 -->
     <div class="card page page5" id="page5">
 
-        <!-- Cartoon Girl with Birthday Cake -->
-        <div class="girl-cartoon">
-            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Hair -->
-                <path d="M 45 65 Q 100 10 155 65 Q 170 130 150 170 L 50 170 Q 30 130 45 65 Z" fill="#2d3436"/>
-                <!-- Face -->
-                <circle cx="100" cy="65" r="38" fill="#ffdfd3"/>
-                <!-- Happy Closed Eyes Making a Wish -->
-                <path d="M 80 65 Q 87 55 94 65" stroke="#2d3436" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <path d="M 106 65 Q 113 55 120 65" stroke="#2d3436" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <!-- Smile & Blush -->
-                <ellipse cx="74" cy="72" rx="6" ry="3.5" fill="#ff7675" opacity="0.7"/>
-                <ellipse cx="126" cy="72" rx="6" ry="3.5" fill="#ff7675" opacity="0.7"/>
-                <path d="M 94 75 Q 100 82 106 75" stroke="#d6336c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                <!-- Pink Floral Dress -->
-                <path d="M 68 100 Q 100 90 132 100 L 140 140 L 60 140 Z" fill="#ffb8b8"/>
-                <!-- Birthday Cake -->
-                <rect x="60" y="135" width="80" height="35" rx="6" fill="#f8a5c2"/>
-                <rect x="55" y="130" width="90" height="10" rx="4" fill="#ffffff"/>
+        <!-- Cartoon Big Birthday Cake Illustration -->
+        <div class="cartoon-img">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect x="35" y="110" width="130" height="55" rx="10" fill="#FFB142"/>
+                <path d="M 35 110 Q 51 125 67 110 Q 83 125 100 110 Q 116 125 132 110 Q 148 125 165 110 L 165 125 L 35 125 Z" fill="#FF5252"/>
+                <rect x="50" y="70" width="100" height="40" rx="8" fill="#74B9FF"/>
+                <path d="M 50 70 Q 66 82 83 70 Q 100 82 117 70 Q 133 82 150 70 L 150 82 L 50 82 Z" fill="#FFFFFF"/>
                 <!-- Candles -->
-                <rect x="80" y="115" width="4" height="15" fill="#74b9ff"/>
-                <rect x="100" y="115" width="4" height="15" fill="#f5cd79"/>
-                <rect x="120" y="115" width="4" height="15" fill="#74b9ff"/>
-                <!-- Flames -->
-                <ellipse cx="82" cy="110" rx="3" ry="5" fill="#ff3838"/>
-                <ellipse cx="102" cy="110" rx="3" ry="5" fill="#ff3838"/>
-                <ellipse cx="122" cy="110" rx="3" ry="5" fill="#ff3838"/>
+                <rect x="75" y="40" width="8" height="30" fill="#FFDA79"/>
+                <path d="M 79 28 Q 84 36 79 40 Q 74 36 79 28 Z" fill="#FF5252"/>
+                <rect x="117" y="40" width="8" height="30" fill="#FFDA79"/>
+                <path d="M 121 28 Q 126 36 121 40 Q 116 36 121 28 Z" fill="#FF5252"/>
             </svg>
         </div>
 
         <h2>HAPPY BIRTHDAY ❤️</h2>
 
         <p class="birthday-main">
-            to the girl who made my Nizamabad days a little more beautiful. ❤️
+            to the girl who made my Nizamabad days
+            a little more beautiful. ❤️
         </p>
 
         <p class="distance-text">
-            Nuvvu vere place ki shift ayyav, distance perigindi…<br>
-            kaani naa crush ki <span class="highlight">distance limit pettadam</span> naa control lo ledu. 😂❤️
+            Nuvvu vere place ki shift ayyav,<br>
+            distance perigindi…
+            <br><br>
+
+            kaani naa crush ki
+            <span class="highlight">
+                distance limit pettadam
+            </span>
+            naa control lo ledu. 😂❤️
         </p>
 
         <p class="punchline">
@@ -665,13 +697,27 @@ button:hover{
         </p>
 
         <div class="status-card">
-            <div class="status-title">CRUSH STATUS</div>
-            <div class="status-active">💗 STILL ACTIVE</div>
-            <div class="expiry">Expiry date: Not available. 😂</div>
+
+            <div class="status-title">
+                CRUSH STATUS
+            </div>
+
+            <div class="status-active">
+                💗 STILL ACTIVE
+            </div>
+
+            <div class="expiry">
+                Expiry date: Not available. 😂
+            </div>
+
         </div>
 
         <div class="nav">
-            <button onclick="readAgain()">↩️ Read it again</button>
+
+            <button onclick="readAgain()">
+                ↩️ Read it again
+            </button>
+
         </div>
 
     </div>
@@ -693,17 +739,27 @@ const pages = [
 
 
 function startSurprise(){
+
     document.getElementById("opening").style.display = "none";
+
     currentPage = 0;
-    document.getElementById(pages[currentPage]).classList.add("active");
+
+    document.getElementById(pages[currentPage])
+        .classList.add("active");
 }
 
 
 function nextPage(){
+
     if(currentPage < pages.length - 1){
-        document.getElementById(pages[currentPage]).classList.remove("active");
+
+        document.getElementById(pages[currentPage])
+            .classList.remove("active");
+
         currentPage++;
-        document.getElementById(pages[currentPage]).classList.add("active");
+
+        document.getElementById(pages[currentPage])
+            .classList.add("active");
 
         if(currentPage === pages.length - 1){
             celebrate();
@@ -713,33 +769,68 @@ function nextPage(){
 
 
 function prevPage(){
+
     if(currentPage > 0){
-        document.getElementById(pages[currentPage]).classList.remove("active");
+
+        document.getElementById(pages[currentPage])
+            .classList.remove("active");
+
         currentPage--;
-        document.getElementById(pages[currentPage]).classList.add("active");
+
+        document.getElementById(pages[currentPage])
+            .classList.add("active");
+
     }else{
-        document.getElementById(pages[currentPage]).classList.remove("active");
-        document.getElementById("opening").style.display = "flex";
+
+        document.getElementById(pages[currentPage])
+            .classList.remove("active");
+
+        document.getElementById("opening")
+            .style.display = "flex";
+
     }
 }
 
 function readAgain(){
-    document.getElementById(pages[currentPage]).classList.remove("active");    
+ document.getElementById(pages[currentPage])
+            .classList.remove("active");    
     currentPage = 0;
-    document.getElementById(pages[currentPage]).classList.add("active");
+
+ document.getElementById(pages[currentPage])
+            .classList.add("active");
+
 }
 
 
 function celebrate(){
-    const emojis = ["🎉", "✨", "🎈", "🎂", "⭐", "💖", "💕"];
+
+    const emojis = [
+        "🎉",
+        "✨",
+        "🎈",
+        "🎂",
+        "⭐",
+        "💖",
+        "💕"
+    ];
 
     for(let i = 0; i < 35; i++){
+
         const confetti = document.createElement("div");
+
         confetti.className = "confetti";
-        confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.animationDuration = (2.5 + Math.random() * 2) + "s";
-        confetti.style.fontSize = (16 + Math.random() * 14) + "px";
+
+        confetti.innerText =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.animationDuration =
+            (2.5 + Math.random() * 2) + "s";
+
+        confetti.style.fontSize =
+            (16 + Math.random() * 14) + "px";
 
         document.body.appendChild(confetti);
 

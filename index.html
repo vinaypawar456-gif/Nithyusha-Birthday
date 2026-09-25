@@ -43,20 +43,19 @@ body{
 
 .container{
     width:100%;
-    max-width:440px;
-    padding:16px;
+    max-width:480px;
+    padding:18px;
     position:relative;
     z-index:2;
 }
 
 .card{
     width:100%;
-    min-height:500px;
-    height:auto;
+    min-height:640px;
     background:rgba(255,255,255,.96);
-    border-radius:26px;
-    padding:22px 18px;
-    box-shadow:0 15px 45px rgba(180,70,110,.2);
+    border-radius:30px;
+    padding:28px 24px;
+    box-shadow:0 20px 60px rgba(180,70,110,.25);
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -66,11 +65,11 @@ body{
     overflow:hidden;
 }
 
-/* SCRATCH CARD STYLES */
+/* SCRATCH CARD STYLES FOR LAUNCH PAGE */
 .scratch-container {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
     margin: 15px auto;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(214, 51, 108, 0.2);
@@ -105,48 +104,46 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 6px 0 10px 0;
+    margin: 8px 0 16px 0;
 }
 
 .card-img {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 6px 16px rgba(214,51,108,0.2);
-    border: 3px solid #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(214,51,108,0.2);
+    border: 4px solid #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.04) rotate(-1deg);
 }
 
 .special-memory{
-    margin:8px auto;
-    padding:8px 12px;
-    max-width:320px;
+    margin:12px auto;
+    padding:10px 16px;
+    max-width:340px;
     background:linear-gradient(135deg,#fff8b8,#fffdf0);
-    border-left:4px solid #f4c430;
-    border-radius:12px;
+    border-left:5px solid #f4c430;
+    border-radius:14px;
     color:#8a6810;
     font-weight:700;
-    font-size:13px;
+    font-size:14px;
     line-height:1.4;
-    box-shadow:0 4px 14px rgba(244,196,48,.2);
+    box-shadow:0 6px 20px rgba(244,196,48,.25);
 }
 
 .opening h1{
-    font-size:26px;
+    font-size:30px;
     color:#d6336c;
     margin-bottom:8px;
 }
 
 .opening p{
-    font-size:15px;
+    font-size:16px;
     line-height:1.5;
-}
-
-.tap{
-    margin-top:10px;
-    color:#d6336c;
-    font-weight:600;
-    font-size:14px;
 }
 
 .page{
@@ -164,21 +161,21 @@ body{
 }
 
 @keyframes fadeIn{
-    from{ opacity:0; transform:translateY(12px); }
+    from{ opacity:0; transform:translateY(15px); }
     to{ opacity:1; transform:translateY(0); }
 }
 
 .page h2{
-    font-size:25px;
+    font-size:28px;
     color:#d6336c;
-    margin-bottom:4px;
+    margin-bottom:6px;
     font-weight:800;
 }
 
 .page p{
-    font-size:15px;
-    line-height:1.65;
-    margin-bottom:8px;
+    font-size:16px;
+    line-height:1.75;
+    margin-bottom:12px;
     color:#4a2634;
 }
 
@@ -190,47 +187,42 @@ body{
 .nav{
     display:flex;
     justify-content:center;
-    gap:10px;
+    gap:12px;
     width:100%;
-    margin-top:8px;
+    margin-top:12px;
 }
 
 button{
     border:none;
-    padding:10px 18px;
-    border-radius:22px;
+    padding:12px 22px;
+    border-radius:25px;
     background:#d6336c;
     color:white;
-    font-size:13.5px;
+    font-size:14px;
     font-weight:600;
     cursor:pointer;
-    box-shadow:0 5px 12px rgba(214,51,108,.22);
+    box-shadow:0 6px 15px rgba(214,51,108,.22);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover{
+    background:#c2255c;
+    transform:translateY(-2px);
 }
 
 .status-card{
     width:100%;
-    max-width:280px;
-    margin:6px auto;
-    padding:8px 12px;
-    border-radius:14px;
+    max-width:300px;
+    margin:8px auto;
+    padding:10px 14px;
+    border-radius:16px;
     background:linear-gradient(135deg,#fff0f6,#ffe0eb);
     border:1px solid rgba(214,51,108,.18);
 }
 
-.status-title{ font-size:10.5px; color:#9c4665; letter-spacing:0.5px; }
-.status-active{ font-size:16px; font-weight:800; color:#d6336c; }
-.expiry{ font-size:10.5px; color:#777; }
-
-/* Mobile Optimization */
-@media (max-width: 480px) {
-    .container { padding: 12px; }
-    .card { min-height: auto; padding: 18px 14px; border-radius: 22px; }
-    .page h2 { font-size: 23px; }
-    .page p { font-size: 14px; line-height: 1.55; }
-    .card-img { width: 115px; height: 115px; }
-    .scratch-container { width: 240px; height: 240px; }
-    button { padding: 9px 15px; font-size: 12.5px; }
-}
+.status-title{ font-size:11px; color:#9c4665; letter-spacing:0.5px; }
+.status-active{ font-size:18px; font-weight:800; color:#d6336c; }
+.expiry{ font-size:11px; color:#777; }
 
 .confetti{
     position:fixed;
@@ -256,18 +248,18 @@ button{
 
 <div class="container">
 
-    <!-- OPENING WITH SCRATCH CARD -->
+    <!-- OPENING PAGE WITH SCRATCH CARD -->
     <div class="card opening" id="opening">
         <h1>Hey Birthday Girl! ✨</h1>
         <p>Scratch to see your surprise... 🙈</p>
-        
+
         <div class="scratch-container">
             <div class="scratch-reveal-content">
                 <span style="font-size: 50px; margin-bottom: 8px;">🎁</span>
                 <p style="font-weight: 700; color: #d6336c; font-size: 16px;">SURPRISE UNLOCKED! ❤️</p>
                 <p style="font-size: 13px; color: #9c4665; margin-top: 4px;">Tap below to start your story</p>
             </div>
-            <canvas id="scratchCanvas" class="scratch-canvas" width="280" height="280"></canvas>
+            <canvas id="scratchCanvas" class="scratch-canvas" width="260" height="260"></canvas>
         </div>
 
         <div class="nav" id="startBtnWrapper" style="display: none;">
@@ -283,9 +275,9 @@ button{
         </div>
         <p>
             Last year…<br>
-            <span class="soft">Nizamabad lo normal year anukunna.</span><br>
+            <span class="soft">Nizamabad lo normal year anukunna.</span><br><br>
             Kaani nuvvu undadam valla,<br>
-            <span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br>
+            <span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br><br>
             Appudu avi just days anukunna…<br>
             Ippudu venakki tirigi chusthe,<br>
             <span class="highlight">avi actually memories ani ardham avtundi.</span>
@@ -302,8 +294,8 @@ button{
             <img src="page2-girl.png" alt="Nizamabad outing" class="card-img">
         </div>
         <p>
-            Mana best memories ki <span class="soft">pedda plans em levu…</span><br>
-            Random ga bayataki velladam, random talks, reason lekunda navvadam… 😂<br>
+            Mana best memories ki <span class="soft">pedda plans em levu…</span><br><br>
+            Random ga bayataki velladam, random talks, reason lekunda navvadam… 😂<br><br>
             Ippudu avi gurthosthe…<br>
             <span class="highlight">“Abba, those were some good days ra”</span> anipistundi. ❤️<br>
             <span class="green">Because you were there.</span>
@@ -322,7 +314,7 @@ button{
         </div>
         <p>
             Appudu: <span class="orange">“Ekkadiki veldam?”</span> ani plan chesevallam.<br>
-            Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br>
+            Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br><br>
             Nuvvu place marchav… kaani mana memories matram<br>
             <span class="highlight">Google Maps lo location change cheskoledu. 😂❤️</span>
         </p>
@@ -360,7 +352,7 @@ button{
         <p style="font-weight:700; color:#8f3156;">
             to the girl who made my Nizamabad days a little more beautiful. ❤️
         </p>
-        <p style="font-size:13px;">
+        <p style="font-size:14px;">
             Nuvvu vere place ki shift ayyav, distance perigindi…<br>
             kaani naa crush ki <span class="highlight">distance limit pettadam</span> naa control lo ledu. 😂❤️
         </p>
@@ -381,13 +373,11 @@ button{
 const canvas = document.getElementById('scratchCanvas');
 const ctx = canvas.getContext('2d');
 let isDrawing = false;
-let clearedPixels = 0;
 
 function initScratch() {
     ctx.fillStyle = '#ffb3c6';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    // Add overlay text pattern on canvas
     ctx.fillStyle = '#d6336c';
     ctx.font = 'bold 16px "Segoe UI"';
     ctx.textAlign = 'center';

@@ -65,7 +65,7 @@ body{
     overflow:hidden;
 }
 
-/* SCRATCH CARD STYLES FOR LAUNCH PAGE */
+/* SCRATCH CARD STYLES */
 .scratch-container {
     position: relative;
     width: 260px;
@@ -88,6 +88,19 @@ body{
     justify-content: center;
     align-items: center;
     padding: 15px;
+    cursor: pointer; /* Indicates it can be tapped */
+}
+
+.gift-icon {
+    font-size: 55px;
+    margin-bottom: 8px;
+    user-select: none;
+    animation: giftBounce 1.6s infinite;
+}
+
+@keyframes giftBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 .scratch-canvas {
@@ -251,13 +264,14 @@ button:hover{
     <!-- OPENING PAGE WITH SCRATCH CARD -->
     <div class="card opening" id="opening">
         <h1>Hey Birthday Girl! ✨</h1>
-        <p>Scratch to see your surprise... 🙈</p>
+        <p>Scratch or tap to see your surprise... 🙈</p>
 
         <div class="scratch-container">
-            <div class="scratch-reveal-content">
-                <span style="font-size: 50px; margin-bottom: 8px;">🎁</span>
+            <!-- Tapping this container also opens the surprise -->
+            <div class="scratch-reveal-content" onclick="startSurprise()">
+                <div class="gift-icon">🎁</div>
                 <p style="font-weight: 700; color: #d6336c; font-size: 16px;">SURPRISE UNLOCKED! ❤️</p>
-                <p style="font-size: 13px; color: #9c4665; margin-top: 4px;">Tap below to start your story</p>
+                <p style="font-size: 13px; color: #9c4665; margin-top: 4px;">Tap here to start your story 👆</p>
             </div>
             <canvas id="scratchCanvas" class="scratch-canvas" width="260" height="260"></canvas>
         </div>

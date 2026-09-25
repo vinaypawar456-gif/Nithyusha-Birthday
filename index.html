@@ -43,19 +43,20 @@ body{
 
 .container{
     width:100%;
-    max-width:480px;
-    padding:18px;
+    max-width:440px;
+    padding:16px;
     position:relative;
     z-index:2;
 }
 
 .card{
     width:100%;
-    min-height:600px;
+    min-height:500px;
+    height:auto;
     background:rgba(255,255,255,.96);
-    border-radius:30px;
-    padding:28px 24px;
-    box-shadow:0 20px 60px rgba(180,70,110,.25);
+    border-radius:26px;
+    padding:22px 18px;
+    box-shadow:0 15px 45px rgba(180,70,110,.2);
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -65,82 +66,87 @@ body{
     overflow:hidden;
 }
 
-/* Compact Polaroid Frame to give text full space */
+/* SCRATCH CARD STYLES */
+.scratch-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 15px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(214, 51, 108, 0.2);
+    overflow: hidden;
+}
+
+.scratch-reveal-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fff0f6, #ffe0eb);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.scratch-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    touch-action: none;
+}
+
 .card-img-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 8px 0 16px 0;
+    margin: 6px 0 10px 0;
 }
 
 .card-img {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(214,51,108,0.2);
-    border: 4px solid #ffffff;
-    transition: transform 0.3s ease;
-}
-
-.card-img:hover {
-    transform: scale(1.04) rotate(-1deg);
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(214,51,108,0.2);
+    border: 3px solid #ffffff;
 }
 
 .special-memory{
-    margin:18px auto 20px;
-    padding:14px 18px;
-    max-width:340px;
- 
+    margin:8px auto;
+    padding:8px 12px;
+    max-width:320px;
     background:linear-gradient(135deg,#fff8b8,#fffdf0);
-    border-left:5px solid #f4c430;
-    border-radius:16px;
- 
+    border-left:4px solid #f4c430;
+    border-radius:12px;
     color:#8a6810;
-    font-family:"Segoe Print","Comic Sans MS",cursive;
-    font-size:17px;
     font-weight:700;
-    line-height:1.5;
- 
-    box-shadow:0 6px 20px rgba(244,196,48,.25);
- 
-    animation:specialGlow 2.2s ease-in-out infinite;
-}
- 
-.special-memory::before{
-    content:"✨";
-    margin-right:5px;
+    font-size:13px;
+    line-height:1.4;
+    box-shadow:0 4px 14px rgba(244,196,48,.2);
 }
 
 .opening h1{
-    font-size:30px;
+    font-size:26px;
     color:#d6336c;
-    margin-bottom:15px;
+    margin-bottom:8px;
 }
 
 .opening p{
-    font-size:17px;
-    line-height:1.6;
-    margin-bottom:20px;
-}
-
-.gift{
-    font-size:80px;
-    cursor:pointer;
-    user-select:none;
-    animation:giftBounce 1.6s infinite;
-}
-
-@keyframes giftBounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
+    font-size:15px;
+    line-height:1.5;
 }
 
 .tap{
-    margin-top:12px;
+    margin-top:10px;
     color:#d6336c;
     font-weight:600;
-    font-size:15px;
+    font-size:14px;
 }
 
 .page{
@@ -158,22 +164,21 @@ body{
 }
 
 @keyframes fadeIn{
-    from{ opacity:0; transform:translateY(15px); }
+    from{ opacity:0; transform:translateY(12px); }
     to{ opacity:1; transform:translateY(0); }
 }
 
 .page h2{
-    font-size:28px;
+    font-size:25px;
     color:#d6336c;
-    margin-bottom:6px;
+    margin-bottom:4px;
     font-weight:800;
 }
 
-/* Spacious, readable paragraph styling */
 .page p{
-    font-size:16px;
-    line-height:1.75;
-    margin-bottom:12px;
+    font-size:15px;
+    line-height:1.65;
+    margin-bottom:8px;
     color:#4a2634;
 }
 
@@ -185,42 +190,47 @@ body{
 .nav{
     display:flex;
     justify-content:center;
-    gap:12px;
+    gap:10px;
     width:100%;
-    margin-top:12px;
+    margin-top:8px;
 }
 
 button{
     border:none;
-    padding:12px 22px;
-    border-radius:25px;
+    padding:10px 18px;
+    border-radius:22px;
     background:#d6336c;
     color:white;
-    font-size:14px;
+    font-size:13.5px;
     font-weight:600;
     cursor:pointer;
-    box-shadow:0 6px 15px rgba(214,51,108,.22);
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-button:hover{
-    background:#c2255c;
-    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(214,51,108,.22);
 }
 
 .status-card{
     width:100%;
-    max-width:300px;
-    margin:8px auto;
-    padding:10px 14px;
-    border-radius:16px;
+    max-width:280px;
+    margin:6px auto;
+    padding:8px 12px;
+    border-radius:14px;
     background:linear-gradient(135deg,#fff0f6,#ffe0eb);
     border:1px solid rgba(214,51,108,.18);
 }
 
-.status-title{ font-size:11px; color:#9c4665; letter-spacing:0.5px; }
-.status-active{ font-size:18px; font-weight:800; color:#d6336c; }
-.expiry{ font-size:11px; color:#777; }
+.status-title{ font-size:10.5px; color:#9c4665; letter-spacing:0.5px; }
+.status-active{ font-size:16px; font-weight:800; color:#d6336c; }
+.expiry{ font-size:10.5px; color:#777; }
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+    .container { padding: 12px; }
+    .card { min-height: auto; padding: 18px 14px; border-radius: 22px; }
+    .page h2 { font-size: 23px; }
+    .page p { font-size: 14px; line-height: 1.55; }
+    .card-img { width: 115px; height: 115px; }
+    .scratch-container { width: 240px; height: 240px; }
+    button { padding: 9px 15px; font-size: 12.5px; }
+}
 
 .confetti{
     position:fixed;
@@ -246,12 +256,23 @@ button:hover{
 
 <div class="container">
 
-    <!-- OPENING -->
+    <!-- OPENING WITH SCRATCH CARD -->
     <div class="card opening" id="opening">
-        <h1>Something for you 👀</h1>
-        <p>Okay... birthday girl.<br>There's a small surprise waiting for you. 😌</p>
-        <div class="gift" onclick="startSurprise()">🎁</div>
-        <div class="tap">👆 Tap the gift</div>
+        <h1>Hey Birthday Girl! ✨</h1>
+        <p>Scratch to see your surprise... 🙈</p>
+        
+        <div class="scratch-container">
+            <div class="scratch-reveal-content">
+                <span style="font-size: 50px; margin-bottom: 8px;">🎁</span>
+                <p style="font-weight: 700; color: #d6336c; font-size: 16px;">SURPRISE UNLOCKED! ❤️</p>
+                <p style="font-size: 13px; color: #9c4665; margin-top: 4px;">Tap below to start your story</p>
+            </div>
+            <canvas id="scratchCanvas" class="scratch-canvas" width="280" height="280"></canvas>
+        </div>
+
+        <div class="nav" id="startBtnWrapper" style="display: none;">
+            <button onclick="startSurprise()">Open Surprise 👀 →</button>
+        </div>
     </div>
 
     <!-- PAGE 1 -->
@@ -262,15 +283,15 @@ button:hover{
         </div>
         <p>
             Last year…<br>
-            <span class="soft">Nizamabad lo normal year anukunna.</span><br><br>
+            <span class="soft">Nizamabad lo normal year anukunna.</span><br>
             Kaani nuvvu undadam valla,<br>
-            <span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br><br>
-            Appudu avi just days anukunna…<br><br>
+            <span class="highlight">normal year konchem extra special aipoyindi. 😂❤️</span><br>
+            Appudu avi just days anukunna…<br>
             Ippudu venakki tirigi chusthe,<br>
             <span class="highlight">avi actually memories ani ardham avtundi.</span>
         </p>
         <div class="nav">
-            <button onclick="nextPage()">Gurtundha idhi? 😂 →</button>
+            <button onclick="nextPage()">Inka undi, aagu! 👀 →</button>
         </div>
     </div>
 
@@ -281,16 +302,15 @@ button:hover{
             <img src="page2-girl.png" alt="Nizamabad outing" class="card-img">
         </div>
         <p>
-            Mana best memories ki <span class="soft">pedda plans em levu…</span><br><br>
-            Random ga bayataki velladam, random ga tiragadam,random coversations, reason lekunda navvadam… 😂<br><br>
-            <span class="soft">Appudu avvanni normal…</span><br>
+            Mana best memories ki <span class="soft">pedda plans em levu…</span><br>
+            Random ga bayataki velladam, random talks, reason lekunda navvadam… 😂<br>
             Ippudu avi gurthosthe…<br>
             <span class="highlight">“Abba, those were some good days ra”</span> anipistundi. ❤️<br>
             <span class="green">Because you were there.</span>
         </p>
         <div class="nav">
-            <button onclick="prevPage()">← Wait, go back</button>
-            <button onclick="nextPage()">Nijam cheppanaa? 🙈 →</button>
+            <button onclick="prevPage()">← Aagu aagu 😅</button>
+            <button onclick="nextPage()">Gurtundha idhi? 😂 →</button>
         </div>
     </div>
 
@@ -302,13 +322,13 @@ button:hover{
         </div>
         <p>
             Appudu: <span class="orange">“Ekkadiki veldam?”</span> ani plan chesevallam.<br>
-            Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br><br>
-            Nuvvu place marchav… <br>
-            <span class="highlight">kaani mana memories matram Google Maps lo location change cheskokunda akkade unnay. 😂❤️</span>
+            Ippudu: <span class="highlight">“Eppudu kalustam?”</span> ani plan cheyyalsi vastundi. 🥲😂<br>
+            Nuvvu place marchav… kaani mana memories matram<br>
+            <span class="highlight">Google Maps lo location change cheskoledu. 😂❤️</span>
         </p>
         <div class="nav">
-            <button onclick="prevPage()">← One more look</button>
-            <button onclick="nextPage()">Naa mind lo maata... 💓 →</button>
+            <button onclick="prevPage()">← Aagu aagu 😅</button>
+            <button onclick="nextPage()">Nijam cheppanaa? 🙈 →</button>
         </div>
     </div>
 
@@ -320,15 +340,14 @@ button:hover{
         </div>
         <p>
             And yes… <span class="highlight">nuvvu naa crush ani neeku already telusu. 😂</span><br>
-            <span class="orange">So, missing you ani cheppadaniki kuda special reason avasaram ledu kada? </span><br><br>
             I genuinely miss those random talks and having you around. ❤️
         </p>
         <div class="special-memory">
             Yellow chudidaar, white chunni tho dochesav naa yeda… ❤️
         </div>
         <div class="nav">
-            <button onclick="prevPage()">← Go back</button>
-            <button onclick="nextPage()">Main wish ikkade undi 🎂 →</button>
+            <button onclick="prevPage()">← Aagu aagu 😅</button>
+            <button onclick="nextPage()">Asalu surprise ikkade! 🎁 →</button>
         </div>
     </div>
 
@@ -341,7 +360,7 @@ button:hover{
         <p style="font-weight:700; color:#8f3156;">
             to the girl who made my Nizamabad days a little more beautiful. ❤️
         </p>
-        <p style="font-size:14px;">
+        <p style="font-size:13px;">
             Nuvvu vere place ki shift ayyav, distance perigindi…<br>
             kaani naa crush ki <span class="highlight">distance limit pettadam</span> naa control lo ledu. 😂❤️
         </p>
@@ -351,13 +370,79 @@ button:hover{
             <div class="expiry">Expiry date: Not available. 😂</div>
         </div>
         <div class="nav">
-            <button onclick="readAgain()">↩️ Malli First ninchi chadvalante ikkada click chey</button>
+            <button onclick="readAgain()">↩️ Malli choodu</button>
         </div>
     </div>
 
 </div>
 
 <script>
+// SCRATCH CARD LOGIC
+const canvas = document.getElementById('scratchCanvas');
+const ctx = canvas.getContext('2d');
+let isDrawing = false;
+let clearedPixels = 0;
+
+function initScratch() {
+    ctx.fillStyle = '#ffb3c6';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Add overlay text pattern on canvas
+    ctx.fillStyle = '#d6336c';
+    ctx.font = 'bold 16px "Segoe UI"';
+    ctx.textAlign = 'center';
+    ctx.fillText('✨ SCRATCH HERE ✨', canvas.width / 2, canvas.height / 2);
+}
+
+function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return {
+        x: clientX - rect.left,
+        y: clientY - rect.top
+    };
+}
+
+function scratch(e) {
+    if (!isDrawing) return;
+    const pos = getPos(e);
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 20, 0, Math.PI * 2);
+    ctx.fill();
+    checkScratchPercentage();
+}
+
+function checkScratchPercentage() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let transparent = 0;
+    for (let i = 3; i < imageData.data.length; i += 4) {
+        if (imageData.data[i] === 0) transparent++;
+    }
+    const percent = (transparent / (imageData.data.length / 4)) * 100;
+    
+    if (percent > 40) {
+        canvas.style.transition = 'opacity 0.5s ease';
+        canvas.style.opacity = '0';
+        setTimeout(() => {
+            canvas.style.display = 'none';
+            document.getElementById('startBtnWrapper').style.display = 'flex';
+        }, 500);
+    }
+}
+
+canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
+canvas.addEventListener('mousemove', scratch);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+
+canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); });
+canvas.addEventListener('touchmove', scratch);
+canvas.addEventListener('touchend', () => isDrawing = false);
+
+initScratch();
+
+// PAGE NAVIGATION LOGIC
 let currentPage = 0;
 const pages = ["page1", "page2", "page3", "page4", "page5"];
 

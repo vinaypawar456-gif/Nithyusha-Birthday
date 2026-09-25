@@ -135,17 +135,28 @@ body{
 }
 
 .special-memory{
-    margin:12px auto;
-    padding:10px 16px;
+    margin:18px auto 20px;
+    padding:14px 18px;
     max-width:340px;
+ 
     background:linear-gradient(135deg,#fff8b8,#fffdf0);
     border-left:5px solid #f4c430;
-    border-radius:14px;
+    border-radius:16px;
+ 
     color:#8a6810;
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:17px;
     font-weight:700;
-    font-size:14px;
-    line-height:1.4;
+    line-height:1.5;
+ 
     box-shadow:0 6px 20px rgba(244,196,48,.25);
+ 
+    animation:specialGlow 2.2s ease-in-out infinite;
+}
+ 
+.special-memory::before{
+    content:"✨";
+    margin-right:5px;
 }
 
 .opening h1{
